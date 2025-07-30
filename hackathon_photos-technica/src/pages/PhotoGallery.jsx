@@ -1,6 +1,8 @@
+import "../App.css";
+
 const PhotoGallery = () => {
     return (
-        <div>
+        <div className ="page">
             <h1>Photo Gallery</h1>
             <p>Coming soon...</p>
         </div>

@@ -7,7 +7,7 @@ const Profile = () => {
             {/* Nav Bar */}
             
             {/* Profile section */}
-            <section className="profile-container">
+            <section className="profile-container page">
                 <h1>Name Here</h1>
                 <img src={iconImage} className="icon" alt="icon"/>
                 <button /*onClick={handleEditImage}*/ className="profile-button">
