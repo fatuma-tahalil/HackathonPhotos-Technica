@@ -41,6 +41,18 @@
   color: #888;
 }
 
+/* Navbar */
+.navbar {
+  padding: 5%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display:flex;
+  justify-content: flex-start;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
+  background-image: blur(30px) white;
+}
 
 /* Profile Page */
 .profile-container {
