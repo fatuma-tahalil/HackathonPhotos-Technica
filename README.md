@@ -5,9 +5,7 @@ A memory wall that documents pictures through the Hackathon such as workshops, f
 Link to project: 
 
 # How It's Made:
-Tech Used: React, TypeScript, Firebase
-
-The front end is made using the React tool to allow for a dynamic website with intentional UI design to fit the theme of the hackathon. The backend was made using Firebase to save photo uploads in real time for users.
+We built the frontend using React and TypeScript to ensure a responsive and modern UI that matched the updates with Hackers memories. The backend is powered by Firebase, which enables real-time photo uploads and storage. We also used Firebase Authentication and Firestore to handle user data and organize photo collections by team or event moments.
 
 # Lessons Learned:
 
