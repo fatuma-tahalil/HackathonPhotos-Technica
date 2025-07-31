@@ -8,8 +8,10 @@ const Profile = () => {
             
             {/* Profile section */}
             <section className="profile-container page">
-                <h1>Name Here</h1>
+                <h1 className="name">Fatuma Tahalil</h1>
+                <div className="padding-medium"></div>
                 <img src={iconImage} className="icon" alt="icon"/>
+                <div className="padding-medium"></div>
                 <button /*onClick={handleEditImage}*/ className="profile-button">
                     <h1>Edit Account</h1>
                 </button>
