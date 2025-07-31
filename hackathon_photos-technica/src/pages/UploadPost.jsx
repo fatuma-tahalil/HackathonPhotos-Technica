@@ -4,8 +4,9 @@ const postCollection=[];
 function PostCreation () {
     return(
         <>
-    <input type="text" defaultValue="Enter title here"></input>
-    <input value="text" defaultValue="Enter description here"></input>
+        <label for="titleInput" input="text">Enter title:</label>
+    <input type="text" id="titleInput" value="Enter title here"></input>
+    <input type="text" value="Enter description here"></input>
     </>
     );
 }
