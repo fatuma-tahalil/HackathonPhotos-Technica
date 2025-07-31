@@ -18,11 +18,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Profile />} />
         <Route path='/profile' element={<Profile />} />
-        <Route path='/photogallery' element={<PhotoGallery />}>
-          <Route path='workshops' element={<PhotoHashtag />} />
-          <Route path='group-photos' element={<PhotoHashtag />} />
-          <Route path='hardware-hacks' element={<PhotoHashtag />} />
-          </Route>
+        <Route path='/photogallery' element={<PhotoGallery />} >
+          <Route path=':urlHashtag' element={<PhotoHashtag/>} />
+        </Route>
         <Route path ='/uploadpost' element={<UploadPost/>} />
       </Routes>
     </BrowserRouter>
