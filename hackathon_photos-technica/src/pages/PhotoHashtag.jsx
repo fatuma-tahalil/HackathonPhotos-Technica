@@ -1,13 +1,16 @@
-import { Link , useParams} from "react-router-dom"
+import { useParams} from "react-router-dom"
 import "../App.css";
 
+
 const PhotoHashtag = () => {
-    const { hashtagName } = useParams();
+    const { urlHashtag } = useParams();
     return (
         <>
-            <h1> # {hashtagName} </h1>
+            {/* The title changes based off of which hastag was clicked */}
+            <h1> # {urlHashtag}  </h1>
             <div className='photo-album'>
-                {Array.from({ length: 1}, (_, index) => (
+                {/*TODO: Change 40 placeholder to actual number of photos*/}
+                {Array.from({ length: 40}, (_, index) => (
                     <div key={index} className="photo"/> 
                 ))}
             </div>

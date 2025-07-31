@@ -4,6 +4,7 @@
   flex-flow: column wrap;
   align-items: center;
   align-self:flex-start;
+  margin-bottom:100px;
 } 
 
 .padding-medium {
@@ -12,11 +13,10 @@
 }
 /* Pages */
 .page {
-  margin-bottom:100px;
   display: flex;
   flex-direction:column;
   align-items: center;
-  width: 92vw;
+  width: 100vw;
 }
 
 /* Components */
@@ -26,9 +26,10 @@
   padding: 30px;
   margin: 0;
   top: 0;
-  width: 100%;
   display:flex;
   justify-content: flex-start;
+  align-self:flex-start;
+  min-width:300px;
 }
 .navbar a {
   display: flex;
@@ -40,7 +41,7 @@
 /* 2. Photo Slides */
 .photo-slides {
   display: flex;
-  flex-direction: row;
+  flex-flow: row;
   justify-content:space-around;
   width:100%;
 }
@@ -53,6 +54,7 @@
 
 /* Profile Page */
 .profile-container {
+  width: 90vw;
   flex-flow: column;
   justify-content: center;
   height: 600px;
@@ -81,10 +83,10 @@
   font-size: 30px;
 }
 
-
 /* Photo Gallery Page */
 .gallery{
-  max-width:900px;
+  width:900px;
+  margin: 0 auto;
 }
 .gallery a {
   color: white;
@@ -98,4 +100,20 @@
 
 .gallery a:hover{
   text-decoration: underline;
+}
+
+/* Photo Hashtag: Shows the full album of a specific hashtag*/
+.photo-album{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 10px;
+  width:90vw;
+  padding:0 5%;
+}
+
+.photo-album div {
+  height:80px;
+  width:80px;
+  background-color: rgb(223, 220, 220);
+  border-radius: 15px;
 }
