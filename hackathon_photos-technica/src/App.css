@@ -48,7 +48,7 @@
 .photo-slides .photo {
   width:160px;
   height:130px;
-  background-color: gray;
+  background-color: rgb(223, 220, 220);
   border-radius: 10px;
 }
 
