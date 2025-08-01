@@ -2,7 +2,7 @@ import { useParams} from "react-router-dom"
 import "../App.css";
 
 
-const PhotoHashtag = () => {
+const PhotoAlbum = () => {
     const { urlHashtag } = useParams();
     return (
         <>
@@ -18,4 +18,4 @@ const PhotoHashtag = () => {
     )
 }
 
-export default PhotoHashtag;
+export default PhotoAlbum;

@@ -105,15 +105,15 @@
 /* Photo Hashtag: Shows the full album of a specific hashtag*/
 .photo-album{
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  row-gap:20px;
+  column-gap: 0px;
   width:90vw;
-  padding:0 5%;
 }
 
 .photo-album div {
-  height:80px;
-  width:80px;
+  height:150px;
+  width:150px;
   background-color: rgb(223, 220, 220);
-  border-radius: 15px;
+  border-radius: 5px;
 }

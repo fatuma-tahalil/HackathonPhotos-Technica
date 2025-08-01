@@ -1,7 +1,7 @@
 // import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Link, useParams } from 'react-router-dom'
 import PhotoSlides from '../components/PhotoSlides';
-import PhotoHashtag from './PhotoHashtag.jsx'
+import PhotoAlbum from './PhotoAlbum.jsx'
 import '../App.css';
 
 const PhotoGallery = () => {
@@ -10,7 +10,7 @@ const PhotoGallery = () => {
     
     /* Conditionally renders a different page if one of the hashtag links are clicked */
     if (hashtagList.includes(urlHashtag)) {
-        return <PhotoHashtag />
+        return <PhotoAlbum />
     }
     return (
         <div className ="gallery page">
