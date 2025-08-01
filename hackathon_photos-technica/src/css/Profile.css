@@ -1,0 +1,31 @@
+
+/* Profile Page */
+.profile-container {
+  width: 90vw;
+  flex-flow: column;
+  justify-content: center;
+  height: 600px;
+}
+.profile-container .name {
+  margin:0;
+  font-size: 35px;
+}
+.profile-container img{
+  height:180px;
+}
+.profile-container button{
+  height:90px;
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+  box-shadow: 50px;
+  transition-duration: 10s;
+}
+.profile-container button:hover, button h1:hover{
+  border:rgb(150, 146, 146);
+  background:rgb(223, 220, 220);
+  color:rgb(46, 44, 44);
+}
+.profile-container h1 {
+  font-size: 30px;
+}

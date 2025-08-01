@@ -1,8 +1,10 @@
 // import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Link, useParams } from 'react-router-dom'
 import PhotoSlides from '../components/PhotoSlides';
-import PhotoAlbum from './PhotoAlbum.jsx'
-import '../App.css';
+import PhotoAlbum from './PhotoAlbum.jsx';
+
+import "../css/App.css";
+import "../css/Photo.css";
 
 const PhotoGallery = () => {
     const { urlHashtag } = useParams();
