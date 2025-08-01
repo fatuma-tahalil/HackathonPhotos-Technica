@@ -6,9 +6,9 @@ import Profile from './pages/Profile.jsx'
 import PhotoGallery from './pages/PhotoGallery.jsx'
 import UploadPost from './pages/UploadPost.jsx'
 import PhotoAlbum from './pages/PhotoAlbum.jsx'
-//import Login from './pages/Login.jsx'
+import Login from './pages/Login.jsx'
 
-import './App.css'
+import "./css/App.css";
 
 function App() {
 
@@ -17,6 +17,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path='/' element={<Profile />} />
+        <Route path='/login' element={<Login />} />
         <Route path='/profile' element={<Profile />} />
         <Route path='/photogallery' element={<PhotoGallery />} >
           <Route path=':urlHashtag' element={<PhotoAlbum/>} />

@@ -1,11 +1,14 @@
-import "../App.css";
+import "../css/App.css";
+// import "../css/UploadPost.css";
 
 const UploadPost = () => {
-    return (
-        <div className = "page">
-            <h1>Create Post</h1>
-            <p>Coming soon...</p>
-        </div>
+
+    return(
+        <>
+            <label for="titleInput" input="text">Enter title:</label>
+            <input type="text" id="titleInput" value="Enter title here"></input>
+            <input type="text" value="Enter description here"></input>
+        </>
     )
 }
-export default UploadPost;
+export default UploadPost

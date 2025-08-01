@@ -1,5 +1,7 @@
-import iconImage from '../assets/icon.png'
-import "../App.css";
+import iconImage from '../assets/icon.png';
+
+import "../css/App.css";
+import "../css/Profile.css";
 
 const Profile = () => {
     return (
@@ -22,4 +24,4 @@ const Profile = () => {
     )
 }
 
-export default Profile;
+export default Profile
