@@ -1,2 +1,0 @@
-# Technica-Stories
-Technica workshop
