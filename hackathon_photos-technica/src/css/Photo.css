@@ -17,7 +17,7 @@
 
 /* Photo Gallery Page */
 .gallery{
-  width:900px;
+  min-width: 650px;
   margin: 0 auto;
 }
 .gallery a {

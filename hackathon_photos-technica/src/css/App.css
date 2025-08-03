@@ -4,7 +4,8 @@
   flex-flow: column wrap;
   align-items: center;
   align-self:flex-start;
-  margin-bottom:100px;
+  margin: 0;
+  padding:0;
 } 
 
 .padding-medium {
@@ -16,19 +17,18 @@
   display: flex;
   flex-direction:column;
   align-items: center;
-  width: 100vw;
+  width: 100%;
 }
 
 /* Components */
 /* 1. Navbar */
-.navbar{
-  padding: 30px;
-  margin: 0;
-  top: 0;
-  width:92vw;
+#root .navbar{
+  position:relative;
+  width:100%;
+  margin-top: 20px;
   display: flex;
   flex-flow: row;
-  justify-content: space-between;
+  justify-content: space-around;
 
 }
 .navbar .navbar-group{

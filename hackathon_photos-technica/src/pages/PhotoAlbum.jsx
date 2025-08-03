@@ -6,7 +6,7 @@ import '../css/Photo.css';
 const PhotoAlbum = () => {
     const { urlHashtag } = useParams();
     return (
-        <>
+        <div className='page'>
             {/* The title changes based off of which hastag was clicked */}
             <h1> # {urlHashtag}  </h1>
             <div className='photo-album'>
@@ -15,7 +15,7 @@ const PhotoAlbum = () => {
                     <div key={index} className="photo"/> 
                 ))}
             </div>
-        </>
+        </div>
     )
 }
 
