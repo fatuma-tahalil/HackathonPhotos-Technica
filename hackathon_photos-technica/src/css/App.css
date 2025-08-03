@@ -21,14 +21,20 @@
 
 /* Components */
 /* 1. Navbar */
-.navbar {
+.navbar{
   padding: 30px;
   margin: 0;
   top: 0;
+  width:92vw;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+
+}
+.navbar .navbar-group{
   display:flex;
-  justify-content: flex-start;
-  align-self:flex-start;
-  min-width:300px;
+  flex-flow: row;
+  width:fit-content;
 }
 .navbar a {
   display: flex;
@@ -36,3 +42,4 @@
   padding-left: 20px;
   font-size: large;
 }
+

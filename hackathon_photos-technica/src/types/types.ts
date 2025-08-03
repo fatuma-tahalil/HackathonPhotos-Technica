@@ -6,10 +6,10 @@ export type PhotoTag = typeof ALLOWED_TAGS[number];
 export interface User {
     createdAt: Timestamp;
     email: string;
-    id?: string; // Google authentication id
+    id: string; // Google authentication id
     name: string;
     profileURL?: string;
-}
+};
 
 export interface Photo {
     createdAt: Timestamp;
@@ -23,4 +23,4 @@ export interface Photo {
     /* 
     likes?: number;
     */
-}
+};

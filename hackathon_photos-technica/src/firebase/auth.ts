@@ -1,6 +1,7 @@
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut } from "firebase/auth";
 import { doc, setDoc, Timestamp, getDoc } from "firebase/firestore";
 import { db, auth, provider } from './config.ts';
+import type { User }  from '../types/types.ts';
 
 
 export const signInWithGoogle = async () => { 
@@ -56,13 +57,14 @@ async function userInDatabase(user) {
 // Adds the user to the database
 async function addUserToDatabase(user) {
     try {
-        const userData = {
+        const userData: User = {
             id: user.uid,
             email: user.email,
             name: user.displayName,
             profileURL: user.photoURL || '',
             createdAt: Timestamp.now()
         }
+        
         const userRef = doc(db, "users", userData.id)
         await setDoc(userRef, userData);
     } catch (error) {

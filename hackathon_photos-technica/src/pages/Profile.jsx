@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { getUserData } from '../firebase/profileService.ts';
-import { editImageUrl } from '../utils/imageUtils.js';
-
+import icon from '../assets/icon.png';
 import '../css/App.css';
 import '../css/Profile.css';
 
@@ -15,7 +14,8 @@ const Profile = () => {
         const fetchUserData = async () => {
             try {
                 setLoading(true);
-                const data = await getUserData();
+                // TODO: Change hard-coded ID into dynamically updated ID from user-side
+                const data = await getUserData('jWn5rS56E1cv5mmd8EHBAaW0PhT2');
                 setUserData(data);
             } catch (error) {
                 setError(error.message);
@@ -31,7 +31,7 @@ const Profile = () => {
             <section className="profile-container page">
                 <h1 className="name">{userData?.name || "loading.."}</h1>
                 <div className="padding-medium"></div>
-                <img src={editImageUrl(userData?.profileURL)} className="icon" alt="user icon" />
+                <img src={icon} className="icon" alt="user icon" />
                 <div className="padding-medium"></div>
                 <button /*onClick={handleEditImage}*/ className="profile-button">
                     <h1>Edit Account</h1>
