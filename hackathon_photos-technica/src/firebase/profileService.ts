@@ -1,9 +1,9 @@
 import { collection, DocumentReference, getDocs, setDoc, getDoc, deleteDoc, query, where, doc, updateDoc, arrayUnion, Firestore } from "firebase/firestore";
 
 import { db } from "../firebase/config.ts";
-import { Photo, User } from "../types/types";
+//import { User, Photo } from "../types/types.ts"
 
-export async function getUserData(db: Firestore, id: string) {
+export async function getUserData(id: string) {
     // We use the document Id to find the user reference
     const userRef = doc(db, "users", id);
     const userDoc = await getDoc(userRef);
@@ -17,20 +17,5 @@ export async function getUserData(db: Firestore, id: string) {
     }
 }
 
-/* Enters a user to print data by using a users document ID */
-async function testUser() {
-    try {
-        console.log("Testing getUserData...");
-        const userData = await getUserData(db, "SefENTUqPIbjca69EpGY");
-        if (userData !== null) {
-            console.log("User data");
-            console.log(userData);
-        }
-    } 
-    catch (error) {
-        console.log("ERROR");
-        console.error("Firebase error: ", error);
-    }
-}
 
-testUser();
+

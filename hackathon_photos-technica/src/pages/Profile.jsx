@@ -1,18 +1,37 @@
-import iconImage from '../assets/icon.png'
+import { useState, useEffect } from 'react'
+import { getUserData } from "../firebase/profileService.ts"
+import { editImageUrl } from "../utils/imageUtils.js"
 
 import "../css/App.css"
 import "../css/Profile.css"
 
 const Profile = () => {
+    const [userData, setUserData] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const fetchUserData = async () => {
+            try {
+                setLoading(true);
+                const data = await getUserData("SefENTUqPIbjca69EpGY");
+                setUserData(data);
+            } catch (error) {
+                setError(error.message);
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchUserData();
+    }, []);
     return (
         <>
-            {/* Nav Bar */}
-            
             {/* Profile section */}
             <section className="profile-container page">
-                <h1 className="name">Fatuma Tahalil</h1>
+                <h1 className="name">{userData?.name || "loading.."}</h1>
                 <div className="padding-medium"></div>
-                <img src={iconImage} className="icon" alt="icon"/>
+                {console.log(userData?.profileURL)}
+                <img src={editImageUrl(userData?.profileURL)} className="icon" alt="icon"/>
                 <div className="padding-medium"></div>
                 <button /*onClick={handleEditImage}*/ className="profile-button">
                     <h1>Edit Account</h1>
