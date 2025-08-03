@@ -6,9 +6,9 @@ export type PhotoTag = typeof ALLOWED_TAGS[number];
 export interface User {
     createdAt: Timestamp;
     email: string;
-    id?: string;
+    id?: string; // Google authentication id
     name: string;
-    photo?: string;
+    profileURL?: string;
 }
 
 export interface Photo {

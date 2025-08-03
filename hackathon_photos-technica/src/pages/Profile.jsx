@@ -15,7 +15,7 @@ const Profile = () => {
         const fetchUserData = async () => {
             try {
                 setLoading(true);
-                const data = await getUserData("SefENTUqPIbjca69EpGY");
+                const data = await getUserData();
                 setUserData(data);
             } catch (error) {
                 setError(error.message);
@@ -31,11 +31,8 @@ const Profile = () => {
             <section className="profile-container page">
                 <h1 className="name">{userData?.name || "loading.."}</h1>
                 <div className="padding-medium"></div>
-                {console.log(userData?.profileURL)}
-                <img src={editImageUrl(userData?.profileURL)} className="icon" alt="Photo of", {userData?.name}/>
-
+                <img src={editImageUrl(userData?.profileURL)} className="icon" alt="user icon" />
                 <div className="padding-medium"></div>
-                
                 <button /*onClick={handleEditImage}*/ className="profile-button">
                     <h1>Edit Account</h1>
                 </button>

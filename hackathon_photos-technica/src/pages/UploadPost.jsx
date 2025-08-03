@@ -2,7 +2,6 @@ import '../css/App.css';
 // import '../css/UploadPost.css';
 
 const UploadPost = () => {
-
     return(
         <>
             <label for="titleInput" input="text">Enter title:</label>

@@ -1,4 +1,3 @@
-// import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar.jsx'
 
@@ -11,7 +10,6 @@ import Login from './pages/Login.jsx'
 import "./css/App.css";
 
 function App() {
-
   return (
     <BrowserRouter>
       <Navbar />
