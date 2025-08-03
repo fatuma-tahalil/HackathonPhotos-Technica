@@ -18,10 +18,20 @@ background-color:rgb(161, 161, 161);
 .container #descBox {
     width: 450px;
     height: 200px;
-    transform: translateY(100px);
+    transform: translateY(140px);
     display:flex;
     justify-items:start;
 }
-.container #UploadBtn {
-    
+.container #uploadBtn {
+   transform: translateY(160px);
+   height: 45px;
+    width:300px;
+}
+.container #titleInput {
+    transform: translateY(-90px);
+   height: 40px;
+    width:300px;
+}
+.container #titleLabel {
+    transform: translateY(-100px);
 }

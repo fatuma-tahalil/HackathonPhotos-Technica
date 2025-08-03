@@ -7,7 +7,7 @@ function App() {
   return (
     <>
 
-      <LoginPage></LoginPage>
+      <UploadPost/>
       </>
   )
 }
