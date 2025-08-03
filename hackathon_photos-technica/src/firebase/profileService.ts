@@ -3,9 +3,9 @@ import { collection, DocumentReference, getDocs, setDoc, getDoc, deleteDoc, quer
 import { db } from "../firebase/config.ts";
 //import { User, Photo } from "../types/types.ts"
 
-export async function getUserData(id: string) {
+export async function getUserData() {
     // We use the document Id to find the user reference
-    const userRef = doc(db, "users", id);
+    const userRef = doc(db, "users", userID);
     const userDoc = await getDoc(userRef);
 
     if (userDoc.exists()) {

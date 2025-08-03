@@ -6,8 +6,6 @@ import { db, auth, provider } from './config.ts';
 export const signInWithGoogle = async () => { 
     try {
         const result = await signInWithPopup(auth, provider);
-        /* const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential?.accessToken; */
 
         // Signed-in user info
         // Firebase automatically adds users to user authentication but not the database
@@ -17,16 +15,10 @@ export const signInWithGoogle = async () => {
         if (!userExist){
             await addUserToDatabase(user);
         }
-
-        // Prints the successfull sign-in
-        console.log("Signed in:", user.displayName, user.email);
-        console.log("User ID:", user.uid); // Important for database operations
         return user;
     } catch (error) {
         const errorCode = error.code;
         const errorMessage = error.message;
-        /*const email = error.customData?.email;
-        const credential = GoogleAuthProvider.credentialFromError(error);*/
         
         console.error("Sign in error:", errorCode, errorMessage);
         throw error;
@@ -36,7 +28,6 @@ export const signInWithGoogle = async () => {
 export const signOutWithGoole = async () => {
     try {
         await signOut(auth);
-        console.log("Successfully signed out");
     } catch (error) {
         console.error("Sign out failed:", error);
         throw error;
@@ -50,11 +41,10 @@ async function userInDatabase(user) {
         const userSnapshot = await getDoc(userRef); // Check is user exists in database
 
         if (userSnapshot.exists()) {
-            console.log("User already signed up");
             console.log(userSnapshot.data());
             return true;
         } else {
-            console.log("New user detected");
+            // New user
             return false;
         }
     } catch(error) {
@@ -75,9 +65,6 @@ async function addUserToDatabase(user) {
         }
         const userRef = doc(db, "users", userData.id)
         await setDoc(userRef, userData);
-
-        console.log("Added user to database");
-        console.log(userData);
     } catch (error) {
         console.error("Adding user to database failed");
         console.error(error);
