@@ -1,5 +1,4 @@
-import Timestamp
-import { DocumentReference } from "firebase/firestore";
+import { DocumentReference, Timestamp } from "firebase/firestore"
 
 export const ALLOWED_TAGS = ['hardware-hacks', 'workshops', 'group-photos'] as const;
 export type PhotoTag = typeof ALLOWED_TAGS[number];

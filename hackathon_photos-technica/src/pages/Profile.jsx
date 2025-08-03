@@ -1,7 +1,7 @@
-import iconImage from '../assets/icon.png';
+import iconImage from '../assets/icon.png'
 
-import "../css/App.css";
-import "../css/Profile.css";
+import "../css/App.css"
+import "../css/Profile.css"
 
 const Profile = () => {
     return (

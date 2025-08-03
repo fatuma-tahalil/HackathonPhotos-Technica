@@ -1,5 +1,5 @@
-import "../css/App.css";
-import '../css/Login.css';
+import "../css/App.css"
+import '../css/Login.css'
 import technicaPhoto from '../assets/technica2.png'
 
 const Login = () => {
