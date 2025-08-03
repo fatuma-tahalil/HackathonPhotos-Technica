@@ -16,6 +16,12 @@ export async function getUserData(id: string) {
         return (null);
     }
 }
+// Function to update the profile
+/*export async function editUserData(id: string, data: ) {
+     // We use the document Id to find the user reference
+     const userRef = doc(db, "users", id);
+     const updateDoc()
+} */
 
 
 

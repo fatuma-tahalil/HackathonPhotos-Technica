@@ -1,5 +1,5 @@
-import "../css/App.css"
-// import "../css/UploadPost.css"
+import '../css/App.css';
+// import '../css/UploadPost.css';
 
 const UploadPost = () => {
 

@@ -1,10 +1,11 @@
-import { useState, useEffect } from 'react'
-import { getUserData } from "../firebase/profileService.ts"
-import { editImageUrl } from "../utils/imageUtils.js"
+import { useState, useEffect } from 'react';
+import { getUserData } from '../firebase/profileService.ts';
+import { editImageUrl } from '../utils/imageUtils.js';
 
-import "../css/App.css"
-import "../css/Profile.css"
+import '../css/App.css';
+import '../css/Profile.css';
 
+// TODO: Add edit image feature: Event handler when button is clicked, ability to change name, read name change and then update user info
 const Profile = () => {
     const [userData, setUserData] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -31,8 +32,10 @@ const Profile = () => {
                 <h1 className="name">{userData?.name || "loading.."}</h1>
                 <div className="padding-medium"></div>
                 {console.log(userData?.profileURL)}
-                <img src={editImageUrl(userData?.profileURL)} className="icon" alt="icon"/>
+                <img src={editImageUrl(userData?.profileURL)} className="icon" alt="Photo of", {userData?.name}/>
+
                 <div className="padding-medium"></div>
+                
                 <button /*onClick={handleEditImage}*/ className="profile-button">
                     <h1>Edit Account</h1>
                 </button>

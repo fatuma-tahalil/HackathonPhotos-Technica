@@ -1,7 +1,7 @@
-import { useParams} from "react-router-dom";
+import { useParams} from 'react-router-dom';
 
-import "../css/App.css";
-import "../css/Photo.css";
+import '../css/App.css';
+import '../css/Photo.css';
 
 const PhotoAlbum = () => {
     const { urlHashtag } = useParams();
