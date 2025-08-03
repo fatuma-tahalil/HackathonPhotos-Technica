@@ -4,20 +4,21 @@ export const ALLOWED_TAGS = ['hardware-hacks', 'workshops', 'group-photos'] as c
 export type PhotoTag = typeof ALLOWED_TAGS[number];
 
 export interface User {
-    id?: string;
+    createdAt: Timestamp;
     email: string;
+    id?: string;
     name: string;
-    photo?: DocumentReference<Photo>[];
+    photo?: string;
 }
 
 export interface Photo {
-    id?: string;
-    title: string;
-    description: string;
-    tags: PhotoTag[];
-    imageURL?: string;
-    userID: string;
     createdAt: Timestamp;
+    description: string;
+    id?: string;
+    imageURL?: string;
+    title: string;
+    tags: PhotoTag[];
+    userID: string;
     // Extra additions
     /* 
     likes?: number;
