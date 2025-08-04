@@ -28,7 +28,7 @@
   margin-top: 20px;
   display: flex;
   flex-flow: row;
-  justify-content: space-around;
+  justify-content: space-between;
 
 }
 .navbar .navbar-group{
