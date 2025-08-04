@@ -16,6 +16,7 @@ export const signInWithGoogle = async () => {
         if (!userExist){
             await addUserToDatabase(user);
         }
+        console.log("User already in database");
         return user;
     } catch (error) {
         const errorCode = error.code;
