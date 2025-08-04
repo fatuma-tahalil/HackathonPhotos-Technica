@@ -20,15 +20,15 @@ const MenuProps = {
 };
 
 const names = [
-  'Oliver Hansen',
-  'Van Henry',
-  'April Tucker',
-  'Ralph Hubbard',
+  '#hardware-hacks',
+  '#group-photos',
+  '#workshops',
+  '#hacks',
   'Omar Alexander',
   'Carlos Abbott',
   'Miriam Wagner',
   'Bradley Wilkerson',
-  'Virginia Andrews',
+  'Maria Kirby',
   'Kelly Snyder',
 ];
 
@@ -47,7 +47,7 @@ export default function MultipleSelectCheckmarks() {
   
   return (
     <div>
-      <FormControl sx={{ m: 1, width: 300 }}>
+      <FormControl sx={{ m: 1, width: 300, bottom:-39, background:'white', borderRadius:1}}>
         <InputLabel id="demo-multiple-checkbox-label">Tag</InputLabel>
         <Select
           labelId="demo-multiple-checkbox-label"

@@ -1,3 +1,4 @@
+import { transform } from 'typescript';
 import './UploadPost.css'
 import MultipleSelectCheckmarks from './multipleCheckbox.tsx'
 const postCollection=[];
@@ -12,7 +13,7 @@ function PostCreation () {
         <form className="box" method="post" action="" enctype="multipart/form-data">
             <div id="drop-zone">
             <div className="drop-zone-caption">Drag & Drop Files Here</div>
-                <span className="btn btn-primary btn-file" style="position: relative">
+                <span className="btn btn-primary btn-file" style= {{position: "relative"}}>
                 <span>Choose files</span>
                 <input type="file"id="drop-zone-file" name="files[]" multiple/>
             </span>

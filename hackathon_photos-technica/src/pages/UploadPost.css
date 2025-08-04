@@ -18,7 +18,7 @@ background-color:rgb(161, 161, 161);
 .container #descBox {
     width: 450px;
     height: 200px;
-    transform: translateY(140px);
+    transform: translateY(100px);
     display:flex;
     justify-items:start;
 }
