@@ -1,0 +1,51 @@
+
+/* Components */
+/* 1. Photo Slides */
+.photo-slides {
+  display: flex;
+  flex-flow: row;
+  justify-content:space-around;
+  width:100%;
+}
+.photo-slides .photo {
+  width:150px;
+  height:150px;
+  background-color: rgb(223, 220, 220);
+  border-radius: 10px;
+}
+
+
+/* Photo Gallery Page */
+.gallery{
+  width:900px;
+  margin: 0 auto;
+}
+.gallery a {
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-weight:20;
+  font-size: 40px;
+  font-optical-sizing: auto;
+  align-self:flex-start;
+  padding: 30px 2px 30px 5%;
+}
+
+.gallery a:hover{
+  text-decoration: underline;
+}
+
+/* Photo Hashtag: Shows the full album of a specific hashtag*/
+.photo-album{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  row-gap:20px;
+  column-gap: 20px;
+  width:90vw;
+}
+
+.photo-album div {
+  height:150px;
+  width:150px;
+  background-color: rgb(223, 220, 220);
+  border-radius: 5px;
+}

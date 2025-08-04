@@ -1,0 +1,38 @@
+#root {
+  width: 100vw;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  align-self:flex-start;
+  margin-bottom:100px;
+} 
+
+.padding-medium {
+  height:20px;
+  width:100%;
+}
+/* Pages */
+.page {
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  width: 100vw;
+}
+
+/* Components */
+/* 1. Navbar */
+.navbar {
+  padding: 30px;
+  margin: 0;
+  top: 0;
+  display:flex;
+  justify-content: flex-start;
+  align-self:flex-start;
+  min-width:300px;
+}
+.navbar a {
+  display: flex;
+  color: white;
+  padding-left: 20px;
+  font-size: large;
+}

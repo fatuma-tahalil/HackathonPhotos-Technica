@@ -1,20 +1,20 @@
-import './UploadPost.css';
+import "../css/App.css";
+import '../css/Login.css';
+import technicaPhoto from '../assets/technica2.png'
 
-
-function LoginPage() {
-    return(
-        <>
-        <div className="container">
-            <img className="logo" src={technicaPhoto} alt="Technica Logo"></img> 
-            <br></br>
-            <br></br>
-            <button id="button"></button>
-            <br></br>
-            <br></br>
-            <button className="SignInButton" id="signUpButton"> Sign up</button>
+const Login = () => {
+  return (
+        <div class="login-page">
+            <div className="container">
+                <img className="logo" src={technicaPhoto} alt="Technica Logo"></img>
+                <br></br>
+                <br></br>
+                <button className="SignInButton" id="LoginButton"> Log in</button>
+                <br></br>
+                <br></br>
+                <button className="SignInButton" id="signUpButton"> Sign up</button>
+            </div>
         </div>
-        </>
-    );
+    )
 }
-
-export default LoginPage
+export default Login
