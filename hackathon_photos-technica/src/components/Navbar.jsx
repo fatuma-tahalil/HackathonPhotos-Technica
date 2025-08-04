@@ -9,7 +9,7 @@ const Navbar = () => {
                 <Link to="/photogallery"> Gallery </Link>
                 <Link to="/uploadpost"> Create Post </Link>
             </div>
-            <Link to="/login"> Logout </Link>
+            <Link id="logout" to="/login"> Logout </Link>
         </nav>
     )
 }

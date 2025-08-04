@@ -43,3 +43,7 @@
   font-size: large;
 }
 
+.navbar #logout {
+  padding-right: 20px;
+}
+
