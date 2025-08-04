@@ -20,7 +20,7 @@ const Login = () => {
             <div className="container">
                 <img className="logo" src={technicaPhoto} alt="Technica Logo"></img>
                 <div className="padding-medium"></div>
-                <button onClick={handleGoogleSignIn} className="SignInButton" id="LoginButton"> Log in</button>
+                <button onClick={handleGoogleSignIn} id="loginButton"> Log in</button>
             </div>
         </div>
     )

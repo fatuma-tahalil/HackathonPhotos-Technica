@@ -31,7 +31,6 @@
   flex-flow: row;
   justify-content: space-between;
   min-width: 650px; /* So it doesnt look weird with gallery page */
-
 }
 .navbar .navbar-group{
   display:flex;
@@ -44,7 +43,9 @@
   padding-left: 20px;
   font-size: large;
 }
-
+.navbar a:hover{
+  color:rgb(161, 161, 160);
+}
 .navbar .logout {
   padding-right: 20px;
 }

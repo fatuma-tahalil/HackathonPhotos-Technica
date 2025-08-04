@@ -12,6 +12,7 @@ const Profile = ({ user }) => {
             <section className="profile-container page">
                 <h1 className="name">{user?.displayName || "loading.."}</h1>
                 <div className="padding-medium"></div>
+                {/* TODO: Add placeholder image while google profile image loads */}
                 <img src={user?.photoURL || icon} className="icon" alt="user icon" />
                 <div className="padding-medium"></div>
                 <button /*onClick={handleEditImage}*/ className="profile-button">
