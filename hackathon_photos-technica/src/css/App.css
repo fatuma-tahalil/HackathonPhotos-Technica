@@ -45,7 +45,7 @@
   font-size: large;
 }
 
-.navbar #logout {
+.navbar .logout {
   padding-right: 20px;
 }
 

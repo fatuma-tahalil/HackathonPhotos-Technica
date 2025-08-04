@@ -47,7 +47,7 @@ function App() {
           <Navbar />
           <Routes>
             {/* We pass user object as a prop into the pages that need it */}
-            <Route path='/' element={<PhotoGallery />} />
+            <Route path='*' element={<PhotoGallery />} />
             <Route path='/profile' element={<Profile user={user} />} />
             <Route path='/photogallery' element={<PhotoGallery />} >
               <Route path=':urlHashtag' element={<PhotoAlbum/>} />
