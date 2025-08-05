@@ -1,9 +1,10 @@
-import technicaPhoto from '../assets/technica2.png';
 import '../css/App.css';
 import '../css/Login.css';
+import technicaPhoto from '../assets/technica2.png';
 import { signInWithGoogle } from '../firebase/auth.ts';
 
 const Login = () => {
+
     const handleGoogleSignIn = async () => {
         try {
             console.log("About call sign in with google");
