@@ -1,4 +1,4 @@
-import { onAuthStateChanged, signInWithPopup, signOut } from "firebase/auth";
+import { signInWithPopup, signOut } from "firebase/auth";
 import { doc, setDoc, Timestamp, getDoc } from "firebase/firestore";
 import { db, auth, provider } from './config.ts';
 import type { User }  from '../types/types.ts';
