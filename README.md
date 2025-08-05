@@ -10,7 +10,7 @@ We built the frontend using React and TypeScript to ensure a responsive and mode
 # Getting Started
 1. Node.js and npm must be installed. Can be downloaded from [nodejs.org](www.nodejs.org)
 
-2. Install the dependencies: 
+2. Install the project dependencies: 
 `npm install`
 
 3. Install firebase dependencies: 
