@@ -10,10 +10,6 @@ We built the frontend using React.jsx to ensure a responsive and modern UI that 
 # Getting Started: Development
 1. Node.js and npm must be installed. Can be downloaded from [nodejs.org](www.nodejs.org)
 
-# Lessons Learned:
-This was our first project using React so alot of lessons were learned. Implementing Google Authentication was very interesting because it required alot of thought in every aspect of the design. It required alot of error-handeling because there was so many aspects it could break. So I was challenged with alot of debugging before it could work. Then the users information had to be uploaded to the database and I faced challenges with the structural design. If taking the information from google was enough or if I had to format it as it's own collection. The most difficult part was then
-
-
 2. Install the dependencies: 
 `npm install`
 
