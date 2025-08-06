@@ -8,7 +8,7 @@ const PhotoAlbum = () => {
     return (
         <div className='page'>
             {/* The title changes based off of which hastag was clicked */}
-            <h1> # {urlHashtag}  </h1>
+            <h1 id="album-title"> # {urlHashtag}  </h1>
             <div className='photo-album'>
                 {/*TODO: Change 40 placeholder to actual number of photos*/}
                 {Array.from({ length: 40}, (_, index) => (

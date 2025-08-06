@@ -35,7 +35,7 @@
   text-decoration: underline;
 }
 
-/* Photo Hashtag: Shows the full album of a specific hashtag*/
+/* Photo Album: Shows the full album of a specific hashtag*/
 .photo-album{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -49,4 +49,8 @@
   width:150px;
   background-color: rgb(223, 220, 220);
   border-radius: 5px;
+}
+
+#album-title {
+  font-size: 45px;
 }
