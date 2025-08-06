@@ -21,11 +21,7 @@
   box-shadow: 50px;
   transition-duration: 10s;
 }
-.profile-container button:hover, button h1:hover{
-  border:rgb(150, 146, 146);
-  background:rgb(223, 220, 220);
-  color:rgb(46, 44, 44);
-}
+
 .profile-container h1 {
   font-size: 30px;
 }

@@ -1,7 +1,6 @@
-import { transform } from 'typescript';
 import MultipleSelectCheckmarks from '../components/multipleCheckbox.tsx';
-import '../css/UploadPost.css';
 const postCollection=[];
+import '../css/UploadPost.css';
 
 
 
