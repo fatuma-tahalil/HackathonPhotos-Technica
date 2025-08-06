@@ -24,12 +24,10 @@ const names = [
   '#group-photos',
   '#workshops',
   '#hacks',
-  'Omar Alexander',
-  'Carlos Abbott',
-  'Miriam Wagner',
-  'Bradley Wilkerson',
-  'Maria Kirby',
-  'Kelly Snyder',
+  '#food',
+  '#networking',
+  '#sponsers',
+  '#midnight',
 ];
 
 export default function MultipleSelectCheckmarks() {

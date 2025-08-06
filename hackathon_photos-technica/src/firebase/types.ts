@@ -1,4 +1,4 @@
-import Timestamp
+import Timestamp;]
 import { DocumentReference } from "firebase/firestore";
 
 export const ALLOWED_TAGS = ['hardware-hacks', 'workshops', 'group-photos'] as const;
