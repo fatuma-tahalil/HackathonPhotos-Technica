@@ -15,9 +15,9 @@ export interface Photo {
     createdAt: Timestamp;
     description: string;
     id?: string;
-    imageURL?: string;
-    title: string;
+    imagePath: string;
     tags: PhotoTag[];
+    title: string;
     userID: string;
     // Extra additions
     /* 
