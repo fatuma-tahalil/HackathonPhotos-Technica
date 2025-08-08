@@ -5,7 +5,6 @@ import "../css/App.css";
 const Navbar = () => {
     const handleGoogleSignOut = async () => {
     try {
-        console.log("About call sign out with google");
         await signOutWithGoogle();
         console.log("Logout successfull");
     } catch (error) {

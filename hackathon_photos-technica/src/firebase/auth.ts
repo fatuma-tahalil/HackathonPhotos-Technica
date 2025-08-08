@@ -44,11 +44,9 @@ async function userInDatabase(user) {
         const userSnapshot = await getDoc(userRef); // Check is user exists in database
 
         if (userSnapshot.exists()) {
-            console.log(userSnapshot.data());
             return true;
         } else {
-            // New user
-            return false;
+            return false; // New user
         }
     } catch(error) {
         console.error("Error checking if user is in database: ", error);

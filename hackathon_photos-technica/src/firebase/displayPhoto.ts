@@ -12,6 +12,7 @@ export async function getHardwarePhotos() {
     }
     catch (error){
         console.error(error)
+        return [];
     }
 }
 
@@ -24,6 +25,7 @@ export async function getGroupPhotos() {
     }
     catch (error){
         console.error(error)
+        return [];
     }
 }
 
@@ -36,6 +38,7 @@ export async function getWorkshopPhotos() {
     }
     catch (error){
         console.error(error)
+        return [];
     }
 }
 
