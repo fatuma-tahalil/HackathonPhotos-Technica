@@ -1,3 +1,4 @@
+import { ALLOWED_TAGS } from '../types/types.ts';
 import * as React from 'react';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import InputLabel from '@mui/material/InputLabel';
@@ -20,7 +21,7 @@ const MenuProps = {
   },
 };
 
-const names = [
+const name = [
   '#hardware-hacks',
   '#group-photos',
   '#workshops',
@@ -60,7 +61,8 @@ export default function MultipleSelectCheckmarks() {
           renderValue={(selected) => selected.join(', ')}
           MenuProps={MenuProps}
         >
-          {names.map((name) => (
+          {ALLOWED_TAGS
+        .map((name) => (
             <MenuItem key={name} value={name}>
               <Checkbox checked={personName.includes(name)} />
               <ListItemText primary={name} />
