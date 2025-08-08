@@ -12,13 +12,13 @@ export interface User {
 };
 
 export interface Photo {
-    createdAt: Timestamp;
-    description: string;
+    createdAt?: Timestamp;
+    description?: string;
     id?: string;
     imagePath: string;
     tags: PhotoTag[];
-    title: string;
-    userID: string;
+    title?: string;
+    userID?: string;
     // Extra additions
     /* 
     likes?: number;

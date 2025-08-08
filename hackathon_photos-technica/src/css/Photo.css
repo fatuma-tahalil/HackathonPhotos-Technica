@@ -39,16 +39,25 @@
 .photo-album{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  row-gap:20px;
-  column-gap: 20px;
+  column-gap: 100px;
+  row-gap:70px;
   width:90vw;
 }
 
-.photo-album div {
-  height:150px;
-  width:150px;
+.photo-album .photo {
+  height: 240px;
+  width: 220px;
   background-color: rgb(223, 220, 220);
-  border-radius: 5px;
+  border-radius: 20px;
+}
+
+.photo-album .photo .photo-image{
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  object-position: center;
 }
 
 #album-title {
