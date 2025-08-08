@@ -1,11 +1,14 @@
 import MultipleSelectCheckmarks from '../components/multipleCheckbox.tsx';
 const postCollection=[];
 import '../css/UploadPost.css';
+import '../css/app.css'
 
 
 
 function PostCreation () {
     return (
+        <>
+        <div className="padding-medium" />
         <div className='container page'>
             <label htmlFor="titleInput" id="titleLabel">Enter title:</label>
             <input type="text" id="titleInput" defaultValue="Enter title here"></input>
@@ -24,6 +27,7 @@ function PostCreation () {
             <button type="submit" id="uploadBtn">Upload</button>
             <MultipleSelectCheckmarks/>
         </div>
+        </>
     );
 }
 export default PostCreation
