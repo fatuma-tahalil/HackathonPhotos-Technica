@@ -1,13 +1,15 @@
 
 /* Components */
 /* 1. Photo Slides */
-.photo-slides {
+.workshop-photo-slides, .group-photo-slides, .hardware-photo-slides {
   display: flex;
   flex-flow: row;
   justify-content:space-around;
   width:100%;
 }
-.photo-slides .photo {
+.workshop-photo-slides .photo,
+.group-photo-slides .photo, 
+.hardware-photo-slides .photo {
   width:150px;
   height:150px;
   background-color: rgb(223, 220, 220);

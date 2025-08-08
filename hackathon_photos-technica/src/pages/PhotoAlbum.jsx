@@ -11,7 +11,7 @@ const PhotoAlbum = () => {
     const { urlHashtag } = useParams();
     /* Grabs a list of the photos depending on the urlHashtag */
     useEffect(() => {
-        const callPhoto = async() => {
+        const fetchPhoto = async() => {
             try {
                 let photos;
                 switch(urlHashtag){
@@ -28,11 +28,11 @@ const PhotoAlbum = () => {
                         photos = [];
                 }
                 setPhotoList(photos); // Sets the photo list with received photos
-            } catch(error) { 
+            } catch (error) { 
                 console.error(error);
             }
         };
-        callPhoto();
+        fetchPhoto();
     }, [urlHashtag]); 
 
 
