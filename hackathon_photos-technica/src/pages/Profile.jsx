@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 import icon from '../assets/icon.png';
 import '../css/App.css';
@@ -24,5 +25,10 @@ const Profile = ({ user }) => {
         </>
     )
 }
+
+/* Defines user to be an object */
+Profile.propTypes = {
+    user: PropTypes.object.isRequired,
+};
 
 export default Profile
