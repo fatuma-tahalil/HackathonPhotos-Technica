@@ -17,7 +17,7 @@ const PhotoGallery = () => {
         const fetchAllPhotos = async() => {
             try{
 
-                const [hardwarePhotos, groupPhotos, workshopPhotos] = await Primise.all([
+                const [hardwarePhotos, groupPhotos, workshopPhotos] = await Promise.all([
                     getHardwarePhotos().
                     getGroupPhotos(),
                     getWorkshopPhotos(),
