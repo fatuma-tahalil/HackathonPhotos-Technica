@@ -17,7 +17,7 @@ export interface Photo {
     id?: string;
     imagePath: string;
     tags: PhotoTag[];
-    title?: string;
+    title: string;
     userID?: string;
     // Extra additions
     /* 
