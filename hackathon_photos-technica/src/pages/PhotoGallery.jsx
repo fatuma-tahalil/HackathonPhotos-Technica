@@ -3,18 +3,27 @@ import { Link, useParams } from 'react-router-dom';
 import { getHardwarePhotos, getGroupPhotos, getWorkshopPhotos } from '../firebase/displayPhoto.ts';
 import { ALLOWED_TAGS } from '../types/types.ts';
 import PhotoAlbum from './PhotoAlbum.jsx';
+import Modal from '@mui/material/Modal';
 
 import '../css/App.css';
 import '../css/Photo.css';
 
 const PhotoGallery = () => {
+    /* Adds the photos to a list*/
    const [hardwarePhotoList, setHardwarePhotoList] = useState([]);
    const [groupPhotoList, setGroupPhotoList] = useState([]);
    const [workshopPhotoList, setWorkshopPhotoList] = useState([]);
 
+   /* Checks if the images were loaded to the list*/
    const [hardwareImagesLoaded, setHardwareImagesLoaded] = useState(false);
    const [groupImagesLoaded, setGroupImagesLoaded] = useState(false);
    const [workshopImagesLoaded, setWorkshopImagesLoaded] = useState(false);
+
+    /* Checks if the photo information should be open */
+    /*const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);*/
+
    const { urlHashtag } = useParams();
 
     useEffect(() => {
@@ -63,13 +72,13 @@ const PhotoGallery = () => {
                 {Array.from({ length: 4}, (_, index) => (
                     // If the images are loaded and if the photo at this index exists
                     (workshopImagesLoaded && workshopPhotoList[index]?.imagePath !== undefined) ? (   
-                        <div key={index} className="photo"> 
+                        <button key={index} className="photo photo-button"> 
                             <img 
                                 className='photo-image' 
                                 src={workshopPhotoList[index].imagePath} 
                                 alt={urlHashtag + ` ` + workshopPhotoList[index].title}
                             />
-                        </div>  
+                        </button>  
                     ) : (
                     <div key={index} className="photo"/>
                 )
@@ -81,13 +90,13 @@ const PhotoGallery = () => {
                 {Array.from({ length: 4}, (_, index) => (
                     // If the images are loaded and if the photo at this index exists
                     (groupImagesLoaded && groupPhotoList[index]?.imagePath !== undefined) ? (   
-                        <div key={index} className="photo"> 
+                        <button key={index} className="photo photo-button"> 
                             <img 
                                 className='photo-image' 
                                 src={groupPhotoList[index].imagePath} 
                                 alt={urlHashtag + ` ` + groupPhotoList[index].title}
                             />
-                        </div>  
+                        </button>  
                     ) : (
                     <div key={index} className="photo"/>
                 )
@@ -98,13 +107,13 @@ const PhotoGallery = () => {
                 {Array.from({ length: 4}, (_, index) => (
                     // If the images are loaded and if the photo at this index exists*
                     (hardwareImagesLoaded && hardwarePhotoList[index]?.imagePath !== undefined) ? (   
-                        <div key={index} className="photo"> 
+                        <button key={index} className="photo photo-button"> 
                             <img 
                                 className='photo-image' 
                                 src={hardwarePhotoList[index].imagePath} 
                                 alt={urlHashtag + ` ` + hardwarePhotoList[index].title}
                             />
-                        </div>  
+                        </button>  
                     ) : (
                     <div key={index} className="photo"/>
                 )
