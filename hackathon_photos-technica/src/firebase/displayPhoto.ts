@@ -20,7 +20,7 @@ export async function getHardwarePhotos() {
 
 export async function getGroupPhotos() {
     try{
-        const photoCol = collection(db, 'photoHardware');
+        const photoCol = collection(db, 'photoGroup');
         const queryPhotoColByTime = query(photoCol, orderBy('createdAt', 'desc'));
         const photoSnapshot = await getDocs(queryPhotoColByTime);
         const photoList = photoSnapshot.docs.map(doc => doc.data());
@@ -34,7 +34,7 @@ export async function getGroupPhotos() {
 
 export async function getWorkshopPhotos() {
     try{
-        const photoCol = collection(db, 'photoHardware');
+        const photoCol = collection(db, 'photoWorkshop');
         const queryPhotoColByTime = query(photoCol, orderBy('createdAt', 'desc'));
         const photoSnapshot = await getDocs(queryPhotoColByTime);
         const photoList = photoSnapshot.docs.map(doc => doc.data());
