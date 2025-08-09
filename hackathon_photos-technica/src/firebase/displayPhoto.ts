@@ -1,12 +1,14 @@
-import { collection, getDocs, Timestamp, query, where, limit } from "firebase/firestore";
+import { collection, getDocs, Timestamp, query, where, limit, orderBy } from "firebase/firestore";
 import { db, storage } from './config.ts';
 import { ALLOWED_TAGS } from '../types/types.ts';
 
 /* Gets all photos and returns them as a list */
+/* Add quereing to return the photos in order of when they were added*/
 export async function getHardwarePhotos() {
     try{
         const photoCol = collection(db, 'photoHardware');
-        const photoSnapshot = await getDocs(photoCol);
+        const queryPhotoColByTime = query(photoCol, orderBy('createdAt', 'desc'));
+        const photoSnapshot = await getDocs(queryPhotoColByTime);
         const photoList = photoSnapshot.docs.map(doc => doc.data());
         return photoList;
     }
@@ -18,8 +20,9 @@ export async function getHardwarePhotos() {
 
 export async function getGroupPhotos() {
     try{
-        const photoCol = collection(db, 'photoGroup');
-        const photoSnapshot = await getDocs(photoCol);
+        const photoCol = collection(db, 'photoHardware');
+        const queryPhotoColByTime = query(photoCol, orderBy('createdAt', 'desc'));
+        const photoSnapshot = await getDocs(queryPhotoColByTime);
         const photoList = photoSnapshot.docs.map(doc => doc.data());
         return photoList;
     }
@@ -31,8 +34,9 @@ export async function getGroupPhotos() {
 
 export async function getWorkshopPhotos() {
     try{
-        const photoCol = collection(db, 'photoWorkshop');
-        const photoSnapshot = await getDocs(photoCol);
+        const photoCol = collection(db, 'photoHardware');
+        const queryPhotoColByTime = query(photoCol, orderBy('createdAt', 'desc'));
+        const photoSnapshot = await getDocs(queryPhotoColByTime);
         const photoList = photoSnapshot.docs.map(doc => doc.data());
         return photoList;
     }
