@@ -10,6 +10,8 @@ const PhotoAlbum = () => {
     const [photoList, setPhotoList] = useState([]);
     const { urlHashtag } = useParams();
     /* Grabs a list of the photos depending on the urlHashtag */
+
+
     useEffect(() => {
         const fetchPhoto = async() => {
             try {

@@ -21,18 +21,12 @@ const PhotoGallery = () => {
         /* If the length is greater than 0 then the images have loaded in */
         if (hardwarePhotoList.length !== 0) {
             setHardwareImagesLoaded(true);
-            console.log("hardware images loaded");
-            console.log(hardwarePhotoList);
         }
         if (groupPhotoList.length !== 0) {
             setGroupImagesLoaded(true);
-            console.log("group images loaded");
-            console.log(groupPhotoList);
         }
         if (workshopPhotoList.length !== 0) {
             setWorkshopImagesLoaded(true);
-            console.log("workshop images loaded");
-            console.log(workshopPhotoList);
         }
 
     }, [hardwarePhotoList, groupPhotoList, workshopPhotoList])

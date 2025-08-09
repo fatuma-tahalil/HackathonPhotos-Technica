@@ -21,7 +21,6 @@ export const useAuth = () => {
       try {
         setUser(user);
         setLoading(false);
-        console.log("USER: ", user);
       }
       catch {
         console.error("Error catching user authentication change");
