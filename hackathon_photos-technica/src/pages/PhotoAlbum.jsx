@@ -38,8 +38,6 @@ const PhotoAlbum = () => {
 
     return (
         <div className='page'>
-            {console.log(photoList)}
-
             {/* The title changes based off of which hastag was clicked */}
             <h1 id="album-title"> # {urlHashtag}  </h1>
             <div className="padding-medium"/>

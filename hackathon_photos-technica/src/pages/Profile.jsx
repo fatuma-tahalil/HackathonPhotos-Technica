@@ -10,9 +10,9 @@ const Profile = ({ user }) => {
     const [imageLoaded, setImageLoaded] = useState(false);
 
     useEffect(() => {
-    if (user?.photoURL !== null) {
-        setImageLoaded(true);
-    }
+        if (user?.photoURL !== null) {
+            setImageLoaded(true);
+        }
     }, [user?.photoURL])
 
 
