@@ -11,21 +11,46 @@ const PhotoGallery = () => {
    const [hardwarePhotoList, setHardwarePhotoList] = useState([]);
    const [groupPhotoList, setGroupPhotoList] = useState([]);
    const [workshopPhotoList, setWorkshopPhotoList] = useState([]);
+
+   const [hardwareImagesLoaded, setHardwareImagesLoaded] = useState(false);
+   const [groupImagesLoaded, setGroupImagesLoaded] = useState(false);
+   const [workshopImagesLoaded, setWorkshopImagesLoaded] = useState(false);
    const { urlHashtag } = useParams();
+
+    useEffect(() => {
+        /* If the length is greater than 0 then the images have loaded in */
+        if (hardwarePhotoList.length !== 0) {
+            setHardwareImagesLoaded(true);
+            console.log("hardware images loaded");
+            console.log(hardwarePhotoList);
+        }
+        if (groupPhotoList.length !== 0) {
+            setGroupImagesLoaded(true);
+            console.log("group images loaded");
+            console.log(groupPhotoList);
+        }
+        if (workshopPhotoList.length !== 0) {
+            setWorkshopImagesLoaded(true);
+            console.log("workshop images loaded");
+            console.log(workshopPhotoList);
+        }
+
+    }, [hardwarePhotoList, groupPhotoList, workshopPhotoList])
+   
 
     useEffect(() => {
         const fetchAllPhotos = async() => {
             try{
 
                 const [hardwarePhotos, groupPhotos, workshopPhotos] = await Promise.all([
-                    getHardwarePhotos().
+                    getHardwarePhotos(),
                     getGroupPhotos(),
                     getWorkshopPhotos(),
                 ]);
 
-                setHardwarePhotoList(hardwarePhotos);
-                setGroupPhotoList(groupPhotos);
-                setWorkshopPhotoList(workshopPhotos);
+                setHardwarePhotoList(hardwarePhotos || []);
+                setGroupPhotoList(groupPhotos || []);
+                setWorkshopPhotoList(workshopPhotos || []);
             } catch (error) {
                 console.error(error);
             }
@@ -39,29 +64,57 @@ const PhotoGallery = () => {
     }
     return (
         <div className ="gallery page">
-            {/*Print our the list in console*/}
-            {console.log('list ', workshopPhotoList)}
-
             <Link to="workshops"> # workshops </Link>
             <div className="workshop-photo-slides">
-                <div className="photo"/>
-                <div className="photo"/>
-                <div className="photo"/>
-                <div className="photo"/>
+                {Array.from({ length: 4}, (_, index) => (
+                    // If the images are loaded and if the photo at this index exists
+                    (workshopImagesLoaded && workshopPhotoList[index]?.imagePath !== undefined) ? (   
+                        <div key={index} className="photo"> 
+                            <img 
+                                className='photo-image' 
+                                src={workshopPhotoList[index].imagePath} 
+                                alt={urlHashtag + ` ` + workshopPhotoList[index].title}
+                            />
+                        </div>  
+                    ) : (
+                    <div key={index} className="photo"/>
+                )
+            ))}
             </div>
+
             <Link to="group-photos"> # group-photos </Link>
             <div className="group-photo-slides">
-                <div className="photo"/>
-                <div className="photo"/>
-                <div className="photo"/>
-                <div className="photo"/>
+                {Array.from({ length: 4}, (_, index) => (
+                    // If the images are loaded and if the photo at this index exists
+                    (groupImagesLoaded && groupPhotoList[index]?.imagePath !== undefined) ? (   
+                        <div key={index} className="photo"> 
+                            <img 
+                                className='photo-image' 
+                                src={groupPhotoList[index].imagePath} 
+                                alt={urlHashtag + ` ` + groupPhotoList[index].title}
+                            />
+                        </div>  
+                    ) : (
+                    <div key={index} className="photo"/>
+                )
+            ))}
             </div>
             <Link to="hardware-hacks"> # hardware-hacks </Link>
             <div className="hardware-photo-slides">
-                <div className="photo"/>
-                <div className="photo"/>
-                <div className="photo"/>
-                <div className="photo"/>
+                {Array.from({ length: 4}, (_, index) => (
+                    // If the images are loaded and if the photo at this index exists*
+                    (hardwareImagesLoaded && hardwarePhotoList[index]?.imagePath !== undefined) ? (   
+                        <div key={index} className="photo"> 
+                            <img 
+                                className='photo-image' 
+                                src={hardwarePhotoList[index].imagePath} 
+                                alt={urlHashtag + ` ` + hardwarePhotoList[index].title}
+                            />
+                        </div>  
+                    ) : (
+                    <div key={index} className="photo"/>
+                )
+            ))}
             </div>
         </div>
     )
