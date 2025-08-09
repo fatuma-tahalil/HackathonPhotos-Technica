@@ -30,4 +30,4 @@ function PostCreation () {
         </>
     );
 }
-export default PostCreation
+export default PostCreation;
