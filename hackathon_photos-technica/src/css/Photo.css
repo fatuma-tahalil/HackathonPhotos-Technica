@@ -16,7 +16,7 @@
   background-color: rgb(223, 220, 220);
   border-radius: 20px;
 }
-
+/* The square behind the photos allows photos to be clicable*/
 .photo-button {
     border: none;
     background: none;
@@ -85,4 +85,15 @@
 
 #album-title {
   font-size: 45px;
+}
+
+/* Photo Modal */
+.photo-modal-container {
+  position: 'absolute';
+  top: '50%';
+  left: '50%';
+  transform: 'translate(-50%, -50%)';
+  width: 400;
+  background-color: 'background.paper';
+  border: '2px solid #000';
 }

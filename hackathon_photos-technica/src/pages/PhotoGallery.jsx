@@ -1,9 +1,17 @@
 import { useState, useEffect } from 'react'
+import * as React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { getHardwarePhotos, getGroupPhotos, getWorkshopPhotos } from '../firebase/displayPhoto.ts';
 import { ALLOWED_TAGS } from '../types/types.ts';
+
+import PhotoInfo from '../components/PhotoModal.jsx';
 import PhotoAlbum from './PhotoAlbum.jsx';
+
+// Imports for the photo pop-up (modal)
 import Modal from '@mui/material/Modal';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 
 import '../css/App.css';
 import '../css/Photo.css';
@@ -19,10 +27,18 @@ const PhotoGallery = () => {
    const [groupImagesLoaded, setGroupImagesLoaded] = useState(false);
    const [workshopImagesLoaded, setWorkshopImagesLoaded] = useState(false);
 
-    /* Checks if the photo information should be open */
-    /*const [open, setOpen] = React.useState(false);
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);*/
+    // Checks if the photo information should be open as a modal
+    const [photoInfoOpen, setPhotoInfoOpen] = React.useState(false);
+    // Saves the object of the photo that was clicked
+    const [photoObjectClicked, setPhotoObjectClicked] = React.useState("");
+    const handleClose = () => {
+        setPhotoInfoOpen(false);
+        setPhotoObjectClicked("");
+    }
+    const handleOpen = (photoObject) => {
+        setPhotoInfoOpen(true);
+        setPhotoObjectClicked(photoObject)
+    }
 
    const { urlHashtag } = useParams();
 
@@ -67,58 +83,77 @@ const PhotoGallery = () => {
     }
     return (
         <div className ="gallery page">
+
             <Link to="workshops"> # workshops </Link>
+            
             <div className="workshop-photo-slides">
                 {Array.from({ length: 4}, (_, index) => (
-                    // If the images are loaded and if the photo at this index exists
-                    (workshopImagesLoaded && workshopPhotoList[index]?.imagePath !== undefined) ? (   
-                        <button key={index} className="photo photo-button"> 
-                            <img 
-                                className='photo-image' 
-                                src={workshopPhotoList[index].imagePath} 
-                                alt={urlHashtag + ` ` + workshopPhotoList[index].title}
-                            />
-                        </button>  
-                    ) : (
-                    <div key={index} className="photo"/>
-                )
-            ))}
+                    <div key={index} className="photo-container">
+                        { /* If the images are loaded and if the photo at this index exists*/}
+                        {(workshopImagesLoaded && workshopPhotoList[index]?.imagePath !== undefined) ? ( 
+                                <button className="photo photo-button" onClick={() => handleOpen(workshopPhotoList[index])}> 
+                                    <img
+                                        className='photo-image' 
+                                        src={workshopPhotoList[index].imagePath} 
+                                        alt={urlHashtag + ` ` + workshopPhotoList[index].title}
+                                    />
+                                </button>  
+                        ) : (
+                            <div className="photo"/>
+                        )}
+                    </div>
+                ))}
             </div>
 
             <Link to="group-photos"> # group-photos </Link>
+
             <div className="group-photo-slides">
-                {Array.from({ length: 4}, (_, index) => (
-                    // If the images are loaded and if the photo at this index exists
-                    (groupImagesLoaded && groupPhotoList[index]?.imagePath !== undefined) ? (   
-                        <button key={index} className="photo photo-button"> 
-                            <img 
-                                className='photo-image' 
-                                src={groupPhotoList[index].imagePath} 
-                                alt={urlHashtag + ` ` + groupPhotoList[index].title}
-                            />
-                        </button>  
-                    ) : (
-                    <div key={index} className="photo"/>
-                )
-            ))}
+                    {Array.from({ length: 4}, (_, index) => (
+                        <div key={index} className="photo-container">
+                            { /* If the images are loaded and if the photo at this index exists*/}
+                            {(groupImagesLoaded && groupPhotoList[index]?.imagePath !== undefined) ? (   
+                                <button key={index} className="photo photo-button" onClick={() => handleOpen(groupPhotoList[index])}> 
+                                    <img 
+                                        className='photo-image' 
+                                        src={groupPhotoList[index].imagePath} 
+                                        alt={urlHashtag + ` ` + groupPhotoList[index].title}
+                                    />
+                                </button>  
+                            ) : (
+                            <div key={index} className="photo"/>
+                            )}
+                        </div>
+                    ))}
             </div>
+
             <Link to="hardware-hacks"> # hardware-hacks </Link>
+
             <div className="hardware-photo-slides">
                 {Array.from({ length: 4}, (_, index) => (
-                    // If the images are loaded and if the photo at this index exists*
-                    (hardwareImagesLoaded && hardwarePhotoList[index]?.imagePath !== undefined) ? (   
-                        <button key={index} className="photo photo-button"> 
-                            <img 
-                                className='photo-image' 
-                                src={hardwarePhotoList[index].imagePath} 
-                                alt={urlHashtag + ` ` + hardwarePhotoList[index].title}
-                            />
-                        </button>  
-                    ) : (
-                    <div key={index} className="photo"/>
-                )
+                    <div key={index} className="photo-container">
+                        { /* If the images are loaded and if the photo at this index exists*/}
+                        {(hardwareImagesLoaded && hardwarePhotoList[index]?.imagePath !== undefined) ? (   
+                            <button key={index} className="photo photo-button" onClick={() => handleOpen(hardwarePhotoList[index])}> 
+                                <img 
+                                    className='photo-image' 
+                                    src={hardwarePhotoList[index].imagePath} 
+                                    alt={urlHashtag + ` ` + hardwarePhotoList[index].title}
+                                />
+                            </button>  
+                        ) : (
+                        <div key={index} className="photo"/>
+                    )}
+                </div>
             ))}
             </div>
+            {/* The modal that passes in the information*/}
+            <Modal
+                open={photoInfoOpen}
+                onClose={handleClose}
+            >
+                {/* We pass in the object of the photo that was clicked to display its information */}
+                <PhotoInfo photoInfo={photoObjectClicked}/>
+            </Modal>
         </div>
     )
 }
