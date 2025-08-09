@@ -34,7 +34,7 @@ export async function getWorkshopPhotos() {
         const photoCol = collection(db, 'photoWorkshop');
         const photoSnapshot = await getDocs(photoCol);
         const photoList = photoSnapshot.docs.map(doc => doc.data());
-    return photoList;
+        return photoList;
     }
     catch (error){
         console.error(error)
