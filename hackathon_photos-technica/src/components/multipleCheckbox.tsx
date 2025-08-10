@@ -21,10 +21,9 @@ const MenuProps = {
 };
 
 const names = [
-  '#hardware-hacks',
-  '#group-photos',
-  '#workshops',
-  '#hacks',
+  '# hardware-hacks',
+  '# group-photos',
+  '# workshops',
 ];
 
 interface MultipleCheckboxProps {
