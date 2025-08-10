@@ -7,9 +7,6 @@ import {Timestamp} from 'firebase/firestore';
 import { UUID } from "https://unpkg.com/uuidjs@^5"
 
 
-
-
-
 function PostCreation () {
 
 
