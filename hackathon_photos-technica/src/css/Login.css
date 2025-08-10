@@ -1,0 +1,30 @@
+/* Login Page */
+.container {
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 30px;
+  background-color: aliceblue;
+  width: 500px;
+  height:650px;
+  display:flexbox;
+  flex-direction:column;
+  justify-self: center;
+  transform: translateY(25px);
+  border: 6px solid rgb(193, 210, 238);
+  border-radius: 30px;
+  justify-items: center;
+  
+}
+
+.container #loginButton {
+  margin-top: 50px;
+  height: 70px;
+  width: 200px;
+  font-size: 25px;
+  border-radius: 10px;
+}
+
+.container img {
+    max-height:500px;
+    max-width: 500px;
+}

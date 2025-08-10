@@ -10,7 +10,7 @@ We built the frontend using React.jsx to ensure a responsive and modern UI that 
 # Getting Started: Development
 1. Node.js and npm must be installed. Can be downloaded from [nodejs.org](www.nodejs.org)
 
-2. Install the dependencies: 
+2. Install the project dependencies: 
 `npm install`
 
 3. Install firebase dependencies: 

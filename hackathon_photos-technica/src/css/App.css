@@ -1,0 +1,52 @@
+#root {
+  width: 100vw;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  align-self:flex-start;
+  margin: 0;
+  padding:0;
+} 
+
+.padding-medium {
+  height:20px;
+  width:100%;
+}
+/* Pages */
+.page {
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 50px;
+}
+
+/* Components */
+/* 1. Navbar */
+#root .navbar{
+  position:relative;
+  width:100%;
+  margin-top: 20px;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  min-width: 650px; /* So it doesnt look weird with gallery page */
+}
+.navbar .navbar-group{
+  display:flex;
+  flex-flow: row;
+  width:fit-content;
+}
+.navbar a {
+  display: flex;
+  color: white;
+  padding-left: 20px;
+  font-size: large;
+}
+.navbar a:hover{
+  color:rgb(193, 210, 238);
+}
+.navbar .logout {
+  padding-right: 20px;
+}
+
