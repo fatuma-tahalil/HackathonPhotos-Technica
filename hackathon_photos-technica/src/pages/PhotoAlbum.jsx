@@ -1,16 +1,31 @@
+import * as React from 'react';
 import { useParams} from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { ALLOWED_TAGS } from '../types/types.ts';
 import { getHardwarePhotos, getGroupPhotos, getWorkshopPhotos } from '../firebase/displayPhoto.ts';
+
+import Modal from '@mui/material/Modal';
+import PhotoInfo from '../components/PhotoModal.jsx';
 
 import '../css/App.css';
 import '../css/Photo.css';
 
 const PhotoAlbum = () => {
     const [photoList, setPhotoList] = useState([]);
-    const { urlHashtag } = useParams();
-    /* Grabs a list of the photos depending on the urlHashtag */
+    const { urlHashtag } = useParams(); // Grabs a list of the photos depending on the urlHashtag 
 
+    // Checks if the photo information should be open as a modal
+    const [photoInfoOpen, setPhotoInfoOpen] = React.useState(false);
+    // Saves the object of the photo that was clicked
+    const [photoObjectClicked, setPhotoObjectClicked] = React.useState("");
+
+    const handleClose = () => {
+        setPhotoInfoOpen(false);
+        setPhotoObjectClicked("");
+    }
+    const handleOpen = (photoObject) => {
+        setPhotoInfoOpen(true);
+        setPhotoObjectClicked(photoObject)
+    }
 
     useEffect(() => {
         const fetchPhoto = async() => {
@@ -45,11 +60,23 @@ const PhotoAlbum = () => {
             <div className="padding-medium"/>
             <div className='photo-album'>
                 {Array.from({ length: photoList.length}, (_, index) => (
-                    <div key={index} className="photo"> 
-                        <img className='photo-image' src={photoList[index].imagePath} alt={urlHashtag + ` ` + photoList[index].title}/>
+                    <div className="photo-container" key={index}>
+                        <button className="photo photo-button" onClick={() => handleOpen(photoList[index])}> 
+                            <img className='photo-image' 
+                            src={photoList[index].imagePath} 
+                            alt={urlHashtag + ` ` + photoList[index].title}/>
+                        </button>  
                     </div>
                 ))}
             </div>
+            {/* The modal that displays the information*/}
+            <Modal
+                open={photoInfoOpen}
+                onClose={handleClose}
+            >
+                {/* We pass in the object of the photo that was clicked to display its information */}
+                <PhotoInfo photoInfo={photoObjectClicked}/>
+            </Modal>
         </div>
     )
 }

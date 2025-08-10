@@ -18,12 +18,12 @@
 }
 /* The square behind the photos allows photos to be clicable*/
 .photo-button {
-    border: none;
-    background: none;
-    padding: 0;
-    margin: 0;
-    cursor: pointer;
-    display: block;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  display: block;
 }
 
 .workshop-photo-slides .photo-image,

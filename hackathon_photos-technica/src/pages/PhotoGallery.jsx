@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
 import * as React from 'react';
+import { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom';
 import { getHardwarePhotos, getGroupPhotos, getWorkshopPhotos } from '../firebase/displayPhoto.ts';
 import { ALLOWED_TAGS } from '../types/types.ts';
@@ -7,11 +7,7 @@ import { ALLOWED_TAGS } from '../types/types.ts';
 import PhotoInfo from '../components/PhotoModal.jsx';
 import PhotoAlbum from './PhotoAlbum.jsx';
 
-// Imports for the photo pop-up (modal)
 import Modal from '@mui/material/Modal';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 
 import '../css/App.css';
 import '../css/Photo.css';
@@ -31,6 +27,7 @@ const PhotoGallery = () => {
     const [photoInfoOpen, setPhotoInfoOpen] = React.useState(false);
     // Saves the object of the photo that was clicked
     const [photoObjectClicked, setPhotoObjectClicked] = React.useState("");
+
     const handleClose = () => {
         setPhotoInfoOpen(false);
         setPhotoObjectClicked("");
@@ -146,7 +143,7 @@ const PhotoGallery = () => {
                 </div>
             ))}
             </div>
-            {/* The modal that passes in the information*/}
+            {/* The modal that displays the information*/}
             <Modal
                 open={photoInfoOpen}
                 onClose={handleClose}
