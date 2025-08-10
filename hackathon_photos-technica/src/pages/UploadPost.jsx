@@ -7,40 +7,51 @@ import {Timestamp} from 'firebase/firestore';
 
 
 
-function PostCreation ([user]) {
+
+function PostCreation () {
+
 
     const [values, setValues] = useState({
             createdAt: " ",
             description: " ",
-            id: " ",
+            id: "",
             imagePath: " ",
             tags: " ",
             title: " ",
             userID: " "
 });
 
-const handleChanges  = (e) => {
-    setValues({...values, [e.target.name]:[e.target.value]})
-}
+ const [personName, setPersonName] = React.useState<string[]>([]);
+ 
+const [submittedData, setSubmittedData] = useState(null);
 
+const handleChanges = (e) => {
+    const { name, value } = e.target;    
+     setValues((prev) => ({ ...prev, [name]: value }));
+};
 
 const handleSubmit = (e) => {
 
-    e.preventDefault()
-    console.log(values)
-}
+    e.preventDefault();
+     const timestamp = Timestamp.now();
+     setSubmittedData({ ...values, createdAt : timestamp});
+     console.log(submittedData);
+     }
+     
+     
+
     
     return (
         <div className='container'>
         <form onSubmit = {handleSubmit}>
             <label htmlFor="titleInput" id="titleLabel">Enter title:</label>
-            <input type="text" id="titleInput" placeholder="Enter title here" name="title"
+            <input type="text" id="titleInput" placeholder="Enter title here" value={values.title}name="title"
             onChange = {(e) => handleChanges(e)} required/>
                     <input type="file" id="drop-zone-file" name="imagePath" multiple 
                     onChange = {(e) => handleChanges(e)} required/>
         
             <label htmlFor="descBox">description</label>
-            <input type="text" id="descBox" placeholder="Enter description here" name="description" 
+            <input type="text" id="descBox" placeholder="Enter description here" name="description" value={values.description}
             onChange = {(e) => handleChanges(e)} required/>
             <button type="submit" id="uploadBtn">Upload</button>
             <MultipleSelectCheckmarks name='tags'

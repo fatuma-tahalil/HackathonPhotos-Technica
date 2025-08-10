@@ -1,4 +1,4 @@
-container {
+.container {
     font-family:'Courier New', Courier, monospace;
     text-align: center;
     display: flex;

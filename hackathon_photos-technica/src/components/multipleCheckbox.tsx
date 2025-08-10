@@ -25,16 +25,10 @@ const names = [
   '#group-photos',
   '#workshops',
   '#hacks',
-  'Omar Alexander',
-  'Carlos Abbott',
-  'Miriam Wagner',
-  'Bradley Wilkerson',
-  'Maria Kirby',
-  'Kelly Snyder',
 ];
 
 export default function MultipleSelectCheckmarks() {
-  const [personName, setPersonName] = React.useState<string[]>([]);
+ 
 
   const handleChange = (event: SelectChangeEvent<typeof personName>) => {
     const {
