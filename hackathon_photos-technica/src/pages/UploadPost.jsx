@@ -4,7 +4,8 @@ import MultipleSelectCheckmarks from '../components/multipleCheckbox.tsx';
 import '../css/UploadPost.css';
 import {useState} from "react";
 import {Timestamp} from 'firebase/firestore';
-import { UUID } from "https://unpkg.com/uuidjs@^5"
+import { UUID } from "https://unpkg.com/uuidjs@^5";
+import {auth} from '../firebase/config.ts';
 
 
 function PostCreation () {
@@ -33,11 +34,24 @@ const handleSubmit = (e) => {
 
     e.preventDefault();
      const timestamp = Timestamp.now();
-     setSubmittedData({ ...values, createdAt : timestamp, tags: personName, id: UUID.generate()});
+     setSubmittedData({ ...values, 
+        createdAt : timestamp, 
+        tags: personName, 
+        id: UUID.generate(),
+        userID: auth});
 
-     console.log(submittedData);
+        console.log(submittedData)
+     setValues({
+        createdAt: " ",
+        description: " ",
+        id: "",
+        imagePath: " ",
+        tags: ' ',
+        title: " ",
+        userID: " "});
      }
      
+    
      
 
     
