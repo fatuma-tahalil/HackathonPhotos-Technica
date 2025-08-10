@@ -44,7 +44,7 @@ const PhotoModal = ({photoInfo}) => {
 
             <Box className="photo-information">
                 <Chip
-                    avatar={<Avatar alt="Profile" src={user?.profileURL || icon} />}
+                    avatar={<Avatar alt="Profile" src={user?.profileURL} />}
                     label={user?.name || "loading name..."}
                     variant="outlined"
                     size="lg"
