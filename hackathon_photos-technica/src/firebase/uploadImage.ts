@@ -23,7 +23,7 @@ export async function uploadImage(imageObject: object, file: File){
     if (tagsInPost.includes("# workshops")) {
         await uploadImageToCloudStorage(imageObject, "workshops", file);
     } 
-    else if (tagsInPost.length() == 0) {
+    else if (tagsInPost.length == 0) {
         console.error("No tag was selected");
     }
 }
