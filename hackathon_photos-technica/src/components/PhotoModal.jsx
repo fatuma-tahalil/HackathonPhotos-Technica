@@ -1,9 +1,6 @@
-import { Link } from 'react-router-dom';
-import { auth } from '../firebase/config.ts';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import icon from '../assets/icon.png';
 
 import { fetchUserWhoPosted } from '../firebase/fetchUserWhoPosted.ts';
 

@@ -1,6 +1,5 @@
-import { collection, getDocs, Timestamp, query, where, limit, orderBy } from "firebase/firestore";
-import { db, storage } from './config.ts';
-import { ALLOWED_TAGS } from '../types/types.ts';
+import { collection, getDocs, query, orderBy } from "firebase/firestore";
+import { db } from './config.ts';
 
 /* Gets all photos and returns them as a list */
 /* Add quereing to return the photos in order of when they were added*/
