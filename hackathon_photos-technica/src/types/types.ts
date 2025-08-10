@@ -1,26 +1,26 @@
-import {Timestamp} from "firebase/firestore";
-import { DocumentReference } from "firebase/firestore";
+import {Timestamp } from "firebase/firestore"
 
 export const ALLOWED_TAGS = ['hardware-hacks', 'workshops', 'group-photos'] as const;
 export type PhotoTag = typeof ALLOWED_TAGS[number];
 
 export interface User {
-    id?: string;
+    createdAt: Timestamp;
     email: string;
+    id: string; // Google authentication id
     name: string;
-    photo?: DocumentReference<Photo>[];
-}
+    profileURL?: string;
+};
 
 export interface Photo {
-    id?: string;
-    title: string;
-    description: string;
-    tags: PhotoTag[];
-    imageURL?: string;
-    userID: string;
     createdAt: Timestamp;
+    description?: string;
+    id?: string;
+    imagePath: string;
+    tags?: PhotoTag[];
+    title: string;
+    userID: string;
     // Extra additions
     /* 
     likes?: number;
     */
-}
+};

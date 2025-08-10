@@ -1,23 +1,46 @@
+/* TODO: Max width and number of photos scale to viewport size*/
 
 /* Components */
 /* 1. Photo Slides */
-.photo-slides {
+.workshop-photo-slides, .group-photo-slides, .hardware-photo-slides {
   display: flex;
   flex-flow: row;
   justify-content:space-around;
   width:100%;
 }
-.photo-slides .photo {
-  width:150px;
-  height:150px;
+.workshop-photo-slides .photo,
+.group-photo-slides .photo, 
+.hardware-photo-slides .photo {
+  width:180px;
+  height:180px;
   background-color: rgb(223, 220, 220);
-  border-radius: 10px;
+  border-radius: 20px;
+}
+/* The square behind the photos allows photos to be clicable*/
+.photo-button {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  display: block;
 }
 
+.workshop-photo-slides .photo-image,
+.group-photo-slides .photo-image, 
+.hardware-photo-slides .photo-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  object-position: center;
+}
 
 /* Photo Gallery Page */
 .gallery{
-  width:900px;
+  max-width:800px;
+  min-width: 650px;
   margin: 0 auto;
 }
 .gallery a {
@@ -29,23 +52,74 @@
   align-self:flex-start;
   padding: 30px 2px 30px 5%;
 }
-
 .gallery a:hover{
   text-decoration: underline;
 }
 
-/* Photo Hashtag: Shows the full album of a specific hashtag*/
+/* Photo Album: Shows the full album of a specific hashtag*/
 .photo-album{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  row-gap:20px;
-  column-gap: 20px;
+  column-gap: 60px;
+  row-gap: 30px;
   width:90vw;
 }
-
-.photo-album div {
-  height:150px;
-  width:150px;
+.photo-album .photo {
+  height: 240px;
+  width: 220px;
   background-color: rgb(223, 220, 220);
-  border-radius: 5px;
+}
+.photo-album .photo .photo-image{
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  object-position: center;
+}
+#album-title {
+  font-size: 45px;
+}
+
+/* Photo Modal */
+.photo-modal-container {
+  border: solid black;
+  width: 600px;
+  background-color: rgba(169, 169, 169, 0.451);
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  padding: 2%;
+  border-radius: 20px;
+  position: absolute;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+}
+.photo-modal-container .title {
+  font-size: 25px;
+  width: 400px;
+}
+.photo-modal-container .image-container {
+  width: 400px;
+  height:400px;
+  margin: 20px auto;
+}
+.photo-modal-container .image-container img {
+  width:100%;
+  height:100%;
+  object-fit: cover;
+  object-position: center;
+  background-repeat: no-repeat;
+}
+.photo-modal-container .photo-information {
+  width: 400px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.photo-modal-container .description {
+  width: 380px;
+  display: flex;
+  justify-content: center; 
 }
