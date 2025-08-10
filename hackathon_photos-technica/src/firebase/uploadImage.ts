@@ -13,7 +13,6 @@ const storageToDatabaseFolder = {
 
 export async function uploadImage(imageObject: object, file: File){
     const tagsInPost = imageObject.tags
-    console.log("TAGS: ", tagsInPost);
     if (tagsInPost.includes("# hardware-hacks")) {
         await uploadImageToCloudStorage(imageObject, "hardware-hacks", file);
     } 
