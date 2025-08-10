@@ -19,7 +19,7 @@
     justify-items:start;
 }
 .container #uploadBtn {
-   transform: translateY(160px);
+   transform: translateY(180px);
    height: 45px;
     width:300px;
 }
@@ -30,4 +30,10 @@
 }
 .container #titleLabel {
     transform: translateY(-100px);
+}
+
+.container #resetBtn {
+   transform: translateY(180px);
+   height: 45px;
+    width:300px;
 }
