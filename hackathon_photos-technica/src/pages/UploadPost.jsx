@@ -16,7 +16,7 @@ function PostCreation () {
     const [values, setValues] = useState({
             createdAt: " ",
             description: " ",
-            id: UUID.generate(),
+            id: "",
             imagePath: " ",
             tags: [],
             title: " ",
@@ -36,7 +36,7 @@ const handleSubmit = (e) => {
 
     e.preventDefault();
      const timestamp = Timestamp.now();
-     setSubmittedData({ ...values, createdAt : timestamp, tags: personName});
+     setSubmittedData({ ...values, createdAt : timestamp, tags: personName, id: UUID.generate()});
 
      console.log(submittedData);
      }
