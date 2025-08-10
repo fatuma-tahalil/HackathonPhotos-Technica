@@ -1,6 +1,6 @@
 # Hackathon Photos
 
-Hackathon photos is a memory wall that documents pictures throughout the hackathon, such as workshops, frustrating codes, progress, and team memories. This web app is made to replace the messy Google Drive with hundreds of photos nobody wants to trudge through. Empowering hackers to share their photos as well as see what other hackers are up to. Allowing for better community engagement and inspiration. We aim to make hackathons all the more memorable.
+Hackathon photos is a C.R.U.D app that aims to make hackathons more memorable. The app serves as memory wall, documenting pictures throughout the hackathon, such as workshops, frustrating code, progress, and team memories. Empowering hackers to share their photos as well as see what other hackers are up to allowing for inspiration and better community engagement.
 
 # How It's Made:
 **Tech Used**: HTML, CSS, TypeScript, React, Firebase
