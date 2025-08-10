@@ -27,8 +27,13 @@ const names = [
   '#hacks',
 ];
 
-export default function MultipleSelectCheckmarks() {
- 
+interface MultipleCheckboxProps {
+   personName: string[]
+   setPersonName: Function
+}
+
+export default function MultipleSelectCheckmarks({personName, setPersonName}: MultipleCheckboxProps) { 
+  
 
   const handleChange = (event: SelectChangeEvent<typeof personName>) => {
     const {

@@ -4,6 +4,8 @@ import MultipleSelectCheckmarks from '../components/multipleCheckbox.tsx';
 import '../css/UploadPost.css';
 import {useState} from "react";
 import {Timestamp} from 'firebase/firestore';
+import { UUID } from "https://unpkg.com/uuidjs@^5"
+
 
 
 
@@ -14,15 +16,15 @@ function PostCreation () {
     const [values, setValues] = useState({
             createdAt: " ",
             description: " ",
-            id: "",
+            id: UUID.generate(),
             imagePath: " ",
-            tags: " ",
+            tags: [],
             title: " ",
             userID: " "
 });
 
- const [personName, setPersonName] = React.useState<string[]>([]);
- 
+const [personName, setPersonName] = useState([]);
+
 const [submittedData, setSubmittedData] = useState(null);
 
 const handleChanges = (e) => {
@@ -34,7 +36,8 @@ const handleSubmit = (e) => {
 
     e.preventDefault();
      const timestamp = Timestamp.now();
-     setSubmittedData({ ...values, createdAt : timestamp});
+     setSubmittedData({ ...values, createdAt : timestamp, tags: personName});
+
      console.log(submittedData);
      }
      
@@ -54,8 +57,7 @@ const handleSubmit = (e) => {
             <input type="text" id="descBox" placeholder="Enter description here" name="description" value={values.description}
             onChange = {(e) => handleChanges(e)} required/>
             <button type="submit" id="uploadBtn">Upload</button>
-            <MultipleSelectCheckmarks name='tags'
-            onChange = {(e) => handleChanges(e)} required/>
+            <MultipleSelectCheckmarks personName = {personName} setPersonName = {setPersonName}/>
         </form>
         </div>
     );
