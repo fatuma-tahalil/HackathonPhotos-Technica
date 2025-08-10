@@ -54,7 +54,7 @@ const PhotoModal = ({photoInfo}) => {
                     : "No date"}
                 </p>
             </Box>
-            <p className="description"> {photoInfo?.description || "no description"} </p>
+            <p className="description"> {photoInfo?.description} </p>
         </Box>
     )
 }   
