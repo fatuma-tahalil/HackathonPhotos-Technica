@@ -31,7 +31,7 @@ interface MultipleCheckboxProps {
    setPersonName: Function
 }
 
-export default function MultipleSelectCheckmarks({personName, setPersonName}: MultipleCheckboxProps) { 
+export default function MultipleSelectCheckmarks({personName, setPersonName}: Readonly<MultipleCheckboxProps>) { 
   
 
   const handleChange = (event: SelectChangeEvent<typeof personName>) => {

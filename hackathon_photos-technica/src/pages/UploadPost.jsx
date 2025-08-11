@@ -9,6 +9,7 @@ function PostCreation () {
     const [file, setFile] = useState(null);
     const [personName, setPersonName] = useState([]);
 
+
     const [values, setValues] = useState({
         createdAt: "",
         description: "",
@@ -27,7 +28,7 @@ function PostCreation () {
     }
 
     const handleSubmit = async (e) => {
-
+        
         e.preventDefault();
         const dataToSubmit = {
             ...values, 
@@ -51,17 +52,15 @@ function PostCreation () {
     return (
         <div className='container'>
             <form onSubmit = {handleSubmit}>
-                <label htmlFor="titleInput" id="titleLabel">Enter title:</label>
                 <input type="text" id="titleInput" placeholder="Enter title here" value={values.title}name="title"
                 onChange = {(e) => handleChanges(e)} required/>
                 <input type="file" id="drop-zone-file" name="imagePath" multiple 
                 onChange = {handleFileChange} required/>
-            
-                <label htmlFor="descBox">description</label>
+                <div className="padding-medium"></div>
                 <input type="text" id="descBox" placeholder="Enter description here" name="description" value={values.description}
-                onChange = {(e) => handleChanges(e)} required/>
+                onChange = {(e) => handleChanges(e)}/>
                 <button type="submit" id="uploadBtn">Upload</button>
-                <MultipleSelectCheckmarks personName = {personName} setPersonName = {setPersonName}/>
+                <MultipleSelectCheckmarks personName = {personName} setPersonName = {setPersonName} />
             </form>
         </div>
     );

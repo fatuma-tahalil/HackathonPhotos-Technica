@@ -14,7 +14,6 @@
 .container #descBox {
     width: 450px;
     height: 200px;
-    transform: translateY(100px);
     display:flex;
     justify-items:start;
 }
@@ -24,16 +23,24 @@
     width:300px;
 }
 .container #titleInput {
-    transform: translateY(-90px);
-   height: 40px;
+    transform: translateX(-15px);
+    transform: translateY(-40px);
+    height: 40px;
     width:300px;
 }
 .container #titleLabel {
     transform: translateY(-100px);
+    color: black;
 }
 
 .container #resetBtn {
    transform: translateY(180px);
    height: 45px;
-    width:300px;
+width:300px;
+}
+
+
+.container #drop-zone-file{
+    display:flex;
+    justify-self:right;
 }
