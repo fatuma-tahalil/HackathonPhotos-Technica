@@ -54,8 +54,7 @@ function PostCreation () {
             <form onSubmit = {handleSubmit}>
                 <input type="text" id="titleInput" placeholder="Enter title here" value={values.title}name="title"
                 onChange = {(e) => handleChanges(e)} required/>
-                <input type="file" id="drop-zone-file" name="imagePath" multiple 
-                onChange = {handleFileChange} required/>
+                <input type="file" id="drop-zone-file" name="imagePath" onChange = {handleFileChange} required/>
                 <div className="padding-medium"></div>
                 <input type="text" id="descBox" placeholder="Enter description here" name="description" value={values.description}
                 onChange = {(e) => handleChanges(e)}/>

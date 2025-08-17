@@ -34,7 +34,7 @@ async function uploadImageToCloudStorage(imageObject: object, folder: string, fi
         const imageStorageURL = await getDownloadURL(imageRef); 
         const databaseFolder = storageToDatabaseFolder[folder];
         await uploadImageToDatabase(imageObject, databaseFolder, imageStorageURL);
-    } catch (error){
+    } catch (error) {
         console.error(error);
     }
 

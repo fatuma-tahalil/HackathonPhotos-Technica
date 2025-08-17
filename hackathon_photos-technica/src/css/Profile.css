@@ -10,8 +10,20 @@
   margin:0;
   font-size: 35px;
 }
-.profile-container img{
-  height:180px;
+.profile-container .photo {
+  width:200px;
+  height:200px;
+  background-color: transparent;
+  border-radius: 20px;
+}
+.profile-container .photo img{
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  object-position: center;
+  
 }
 .profile-container button{
   height:90px;
