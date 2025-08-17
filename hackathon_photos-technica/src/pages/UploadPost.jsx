@@ -51,7 +51,7 @@ function PostCreation () {
     
     return (
         <div className='container'>
-            <form onSubmit = {handleSubmit}>
+            <form onSubmit = {handleSubmit} autoComplete="off">
                 <input type="text" id="titleInput" placeholder="Enter title here" value={values.title}name="title"
                 onChange = {(e) => handleChanges(e)} required/>
                 <input type="file" id="drop-zone-file" name="imagePath" onChange = {handleFileChange} required/>

@@ -29,7 +29,7 @@ const ProfileEditForm = ({ onSave }) => {
 
     return (
         /* Profile section */
-        <form className="profile-container page" onSubmit={handleSubmit}>
+        <form className="profile-container page" onSubmit={handleSubmit}autoComplete="off" >
             <label htmlFor="name" type="name">Enter name</label>
             <input id="name" type="text" value={name} onChange = {handleNameChange}/>
             <div className="padding-medium"></div>
