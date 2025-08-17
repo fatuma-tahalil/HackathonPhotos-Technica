@@ -61,7 +61,7 @@ async function addUserToDatabase(user) {
             id: user.uid,
             email: user.email,
             name: user.displayName,
-            profileURL: user.photoURL || '',
+            profileURL: user.photoURL,
             createdAt: Timestamp.now()
         }
 

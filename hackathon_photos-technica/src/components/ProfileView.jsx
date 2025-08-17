@@ -29,7 +29,6 @@ const ProfileView = ({ onEdit }) => {
         if (profileImage !== null && profileImage !== undefined) {
             setImageLoaded(true);
         }
-        console.log(profileImage);
     }, [profileImage])
 
     return (
@@ -40,7 +39,7 @@ const ProfileView = ({ onEdit }) => {
 
             {/* Sets profile image to the google profile if it has loaded or to the placeholder image if not*/}
             <div className="photo">
-                {imageLoaded ? (<img src={profileImage} className="icon" alt="profile" />) : (<img src={icon} className="icon" alt="user icon" />) }
+                {imageLoaded ? (<img src={profileImage} className="icon" alt="profile icon" />) : (<img src={icon} className="icon" alt="default icon" />) }
             </div>
 
             <div className="padding-medium"></div>

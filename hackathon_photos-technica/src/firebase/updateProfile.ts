@@ -47,3 +47,7 @@ async function uploadProfileToStorage(profilePicture: File){
         console.error(error);
     }
 }
+// Function to delete the former profile picture
+/* async function deleteFormerProfileFromStorage(){
+
+}*/
