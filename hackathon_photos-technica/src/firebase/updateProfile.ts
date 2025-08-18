@@ -5,7 +5,7 @@ import type { User } from '../types/type.ts';
 
 export async function updateProfile (name: string, profilePicture: File) {
     const user = auth.currentUser;
-    const updatedUserData: Partial<User> = {};
+    let updatedUserData: Partial<User> = {};
 
     if (!user) {
         console.error('User must be logged in to add photos');
