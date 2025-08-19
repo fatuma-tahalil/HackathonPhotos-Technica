@@ -16,7 +16,7 @@ export async function updateProfile (name: string, profilePicture: File) {
     if (name!== "" && profilePicture !== null){
         updatedUserData = {
             name: name,
-            profileURL: profilePicture
+            profileURL: (await uploadProfileToStorage(profilePicture))
         }
     } else if (name !== "") {
         updatedUserData.name = name;
