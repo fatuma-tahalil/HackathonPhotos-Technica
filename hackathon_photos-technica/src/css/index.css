@@ -1,11 +1,11 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: lilita one, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color:rgb(161, 161, 161);
+  background-color:rgba(255, 255, 255, 1);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -36,15 +36,16 @@ button {
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
-  font-family: inherit;
+  font-family: lucida sans;
   cursor: pointer;
   transition: border-color 0.25s;
+  background-color: rgba(177, 198, 234, 1);
 }
 
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+button::hover{
+  border: 10px solid rgb(155, 183, 231);
 }
+
 
 /* Removed for now to force every screen to be dark*/
 /* 

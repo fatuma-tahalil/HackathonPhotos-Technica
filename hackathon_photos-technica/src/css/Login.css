@@ -1,19 +1,17 @@
 /* Login Page */
+.page{
+  padding:0px;
+}
+
 .container {
-  text-align: center;
-  font-family: 'Courier New', Courier, monospace;
-  padding: 30px;
-  background-color: aliceblue;
-  width: 500px;
-  height:650px;
-  display:flexbox;
+  width:100vw;
+  height:100vh;
+  display:flex;
   flex-direction:column;
-  justify-self: center;
-  transform: translateY(25px);
-  border: 6px solid rgb(193, 210, 238);
-  border-radius: 30px;
-  justify-items: center;
-  
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 .container #loginButton {
@@ -23,8 +21,17 @@
   font-size: 25px;
   border-radius: 10px;
 }
+.container .logo-square {
+  height: 300px;
+  width: 350px;
+  background-color:rgba(228, 241, 249, 1);
+  display:flex;
+  justify-content: center;
+  border-radius: 10px;
+}
 
-.container img {
-    max-height:500px;
-    max-width: 500px;
+.container .logo-square .logo-img {
+  max-height:500px;
+  max-width: 500px;
+  z-index: 2;
 }

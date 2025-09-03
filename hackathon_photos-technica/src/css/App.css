@@ -38,8 +38,7 @@
   width:fit-content;
 }
 .navbar a {
-  display: flex;
-  color: white;
+  display: flex;  
   padding-left: 20px;
   font-size: large;
 }

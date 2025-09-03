@@ -1,6 +1,7 @@
 import '../css/App.css';
 import '../css/Login.css';
 import technicaPhoto from '../assets/technica2.png';
+import technicaLoginPhoto from '../assets/technicaLoginPhoto.png';
 import { signInWithGoogle } from '../firebase/auth.ts';
 
 const Login = () => {
@@ -19,7 +20,9 @@ const Login = () => {
   return (
         <div className="page">
             <div className="container">
-                <img className="logo" src={technicaPhoto} alt="Technica Logo"></img>
+                <div className="logo-square">
+                    <img className="logo-img" src={technicaLoginPhoto} alt="Technica Logo"></img>
+                </div>
                 <div className="padding-medium"></div>
                 <button onClick={handleGoogleSignIn} id="loginButton"> Log in</button>
             </div>
