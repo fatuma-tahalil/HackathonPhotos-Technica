@@ -12,6 +12,8 @@
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
+  object-fit: cover;
+  object-position: center;
 }
 
 .container #loginButton {
@@ -22,6 +24,7 @@
   border-radius: 10px;
 }
 .container .logo-square {
+  position:static;
   height: 300px;
   width: 350px;
   background-color:rgba(228, 241, 249, 1);

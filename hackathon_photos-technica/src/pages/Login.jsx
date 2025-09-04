@@ -1,6 +1,5 @@
 import '../css/App.css';
 import '../css/Login.css';
-import technicaPhoto from '../assets/technica2.png';
 import technicaLoginPhoto from '../assets/technicaLoginPhoto.png';
 import { signInWithGoogle } from '../firebase/auth.ts';
 
