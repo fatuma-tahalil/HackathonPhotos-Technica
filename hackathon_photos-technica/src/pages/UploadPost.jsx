@@ -58,7 +58,7 @@ function PostCreation () {
                 <div className="padding-medium"></div>
                 <input type="text" id="descBox" placeholder="Enter description here" name="description" value={values.description}
                 onChange = {(e) => handleChanges(e)}/>
-                <button type="submit" id="uploadBtn">Upload</button>
+                <button type="submit" id="uploadBtn" className="button">Upload</button>
                 <MultipleSelectCheckmarks personName = {personName} setPersonName = {setPersonName} />
             </form>
         </div>

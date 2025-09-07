@@ -81,7 +81,7 @@ const PhotoGallery = () => {
     return (
         <div className ="gallery page">
 
-            <Link to="workshops"> # workshops </Link>
+            <Link to="workshops" className="hashtag"> # workshops </Link>
             
             <div className="workshop-photo-slides">
                 {Array.from({ length: 4}, (_, index) => (
@@ -102,7 +102,7 @@ const PhotoGallery = () => {
                 ))}
             </div>
 
-            <Link to="group-photos"> # group-photos </Link>
+            <Link to="group-photos" className="hashtag"> # group-photos </Link>
 
             <div className="group-photo-slides">
                     {Array.from({ length: 4}, (_, index) => (
@@ -123,7 +123,7 @@ const PhotoGallery = () => {
                     ))}
             </div>
 
-            <Link to="hardware-hacks"> # hardware-hacks </Link>
+            <Link to="hardware-hacks" className="hashtag"> # hardware-hacks </Link>
 
             <div className="hardware-photo-slides">
                 {Array.from({ length: 4}, (_, index) => (

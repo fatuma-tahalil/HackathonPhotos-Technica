@@ -43,7 +43,7 @@ const ProfileView = ({ onEdit }) => {
             </div>
 
             <div className="padding-medium"></div>
-            <button onClick={onEdit} className="profile-button">
+            <button onClick={onEdit} className="profile-button button">
                 <h1>Edit Account</h1>
             </button>
         </section>

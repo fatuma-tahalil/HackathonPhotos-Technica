@@ -41,13 +41,8 @@
 .gallery{
   max-width:800px;
   min-width: 650px;
-  margin: 0 auto;
 }
 .gallery a {
-  color: white;
-  font-family: "Inter", sans-serif;
-  font-weight:20;
-  font-size: 40px;
   font-optical-sizing: auto;
   align-self:flex-start;
   padding: 30px 2px 30px 5%;
@@ -59,15 +54,23 @@
 /* Photo Album: Shows the full album of a specific hashtag*/
 .photo-album{
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  column-gap: 60px;
-  row-gap: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(15vw, 1fr));
+  column-gap: 2vw;
+  row-gap: 2vh;
   width:90vw;
+  max-width:1200px;
+  margin: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 .photo-album .photo {
-  height: 240px;
-  width: 220px;
+  aspect-ratio: 1/1;
+  width: 100%;
   background-color: rgb(223, 220, 220);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .photo-album .photo .photo-image{
   width: 100%;
@@ -78,10 +81,28 @@
 }
 #album-title {
   font-size: 45px;
+  font-weight: 100;
+  width:100%;
+}
+/* Remove gaps and border radius on small screens */
+@media (max-width: 600px) {
+  .photo-album {
+    gap: 0;
+    width: 100vw;
+    padding: 0;
+  }
+  .photo-album .photo {
+    border-radius: 0;
+  }
+  .photo-album .photo .photo-image {
+    border-radius: 0;
+  }
 }
 
 /* Photo Modal */
 .photo-modal-container {
+  max-height: 50vw;
+  max-height: 85vh;
   border: solid black;
   width: 600px;
   background-color: rgba(169, 169, 169, 0.451);
@@ -94,6 +115,9 @@
   top: 50%;
   left:50%;
   transform: translate(-50%, -50%);
+  overflow:auto;
+  scrollbar-width:none;
+  -ms-overflow-style:none;
 }
 .photo-modal-container .title {
   font-size: 25px;
@@ -101,7 +125,7 @@
 }
 .photo-modal-container .image-container {
   width: 400px;
-  height:400px;
+  height: 400px;
   margin: 20px auto;
 }
 .photo-modal-container .image-container img {
@@ -117,9 +141,11 @@
   flex-flow: row nowrap;
   justify-content: space-around;
   align-items: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .photo-modal-container .description {
   width: 380px;
   display: flex;
   justify-content: center; 
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

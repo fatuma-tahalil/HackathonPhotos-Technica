@@ -56,8 +56,7 @@ const PhotoAlbum = () => {
     return (
         <div className='page'>
             {/* The title changes based off of which hastag was clicked */}
-            <h1 id="album-title"> # {urlHashtag}  </h1>
-            <div className="padding-medium"/>
+            <h1 id="album-title" className="hashtag"> # {urlHashtag}  </h1>
             <div className='photo-album'>
                 {Array.from({ length: photoList.length}, (_, index) => (
                     <div className="photo-container" key={index}>

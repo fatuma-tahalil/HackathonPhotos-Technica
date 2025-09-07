@@ -35,7 +35,7 @@ const ProfileEditForm = ({ onSave }) => {
             <div className="padding-medium"></div>
             <input type="file" id="drop-zone-file" name="imagePath" onChange={handleFileChange} accept="image/*"/>
             <div className="padding-medium"></div>
-            <button type="submit" className="profile-button">
+            <button type="submit" className="profile-button button">
                 <h1>Submit Changes</h1>
             </button>
         </form>

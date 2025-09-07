@@ -21,8 +21,15 @@
   height: 70px;
   width: 200px;
   font-size: 25px;
+  font-weight: 500;
   border-radius: 10px;
+  background-color: rgba(177, 198, 234, 1);
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  cursor: pointer;
+  transition: border-color 0.25s;
 }
+
 .container .logo-square {
   position:static;
   height: 300px;
