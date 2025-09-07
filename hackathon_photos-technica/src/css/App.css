@@ -30,13 +30,12 @@
 /* 1. Navbar */
 #root .navbar{
   position:relative;
-  width:100%;
+  width:100vw;
   padding-top: 20px;
   padding-bottom:15px;
   display: flex;
   flex-flow: row;
   justify-content: space-between;
-  min-width: 650px; /* So it doesnt look weird with gallery page */
   background-color: rgba(177, 198, 234, 1);
   border-radius: 5px;
 }
@@ -57,7 +56,7 @@
   text-decoration:dashed;
 }
 .navbar .logout {
-  padding-right: 20px;
+  padding-right: 2vw;
 }
 
 /*2. Buttons*/
