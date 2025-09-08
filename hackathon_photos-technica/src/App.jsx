@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { useState, useEffect } from 'react';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './firebase/config.ts';
@@ -47,6 +47,7 @@ function App() {
           <Navbar />
           <Routes>
             {/* We pass user object as a prop into the pages that need it */}
+            <Route path="/login" element={<Navigate to="/photogallery" replace />} />
             <Route path='/profile' element={<Profile />} >
               <Route element={<ProfileView />} />
               <Route element={<ProfileEdit />} />
@@ -60,7 +61,8 @@ function App() {
       ) : (
         /* If user not logged in they are forced to login */
         <Routes>
-          <Route path='*' element={<Login />} />
+          <Route path='*' element={<Navigate to="/login" replace />} />
+          <Route path="/login" element={<Login/>} />
         </Routes>
       )}
     </BrowserRouter>
