@@ -49,7 +49,7 @@ function App() {
         <>
           <Navbar />
           <Routes>
-            {/* We pass user object as a prop into the pages that need it */}
+            <Route path="/" element={<Navigate to="/photogallery" replace />} />
             <Route path="/login" element={<Navigate to="/photogallery" replace />} />
             <Route path='/profile' element={<Profile />} >
               <Route element={<ProfileView />} />
