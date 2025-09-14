@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lilita+One&display=swap');
 
-/* Profile Page */
+/* Profile View Page */
 .profile-container {
   width: 90vw;
   flex-flow: column;
@@ -45,9 +45,11 @@
   font-size: clamp(1.2rem, 3vw, 1.8rem);
 }
 
-.profile-container .profile-name-input {
+
+/* Profile Edit Page*/
+.profile-container .edit-profile-name {
   margin: 0;
-  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
   font-weight: 400;
   font-family: 'Inter', sans-serif;
   color: black;

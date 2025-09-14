@@ -44,7 +44,7 @@ const ProfileEditForm = ({ onSave }) => {
         /* Profile section */
         <form className="profile-container page" onSubmit={handleSubmit}autoComplete="off" >
             <label htmlFor="name" type="name">Enter name</label>
-            <input id="name" type="text" value={name} onChange={handleNameChange} className="profile-name-input" placeholder="Enter your name" />
+            <input id="name" type="text" value={name} onChange={handleNameChange} className="edit-profile-name" placeholder="Enter your name" />
             <div className="padding-medium"></div>
 
             <div className="photo-edit-wrapper">

@@ -28,7 +28,7 @@ const PhotoAlbum = () => {
     }
 
     useEffect(() => {
-        const fetchPhoto = async() => {
+        const fetchAllPhotos = async() => {
             try {
                 let photos;
                 switch(urlHashtag){
@@ -49,7 +49,7 @@ const PhotoAlbum = () => {
                 console.error(error);
             }
         };
-        fetchPhoto();
+        fetchAllPhotos();
     }, [urlHashtag]); 
 
 
