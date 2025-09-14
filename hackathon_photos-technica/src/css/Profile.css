@@ -59,3 +59,45 @@
   border-radius: 0.2vw;
   padding-left: 0.2vw;
 }
+
+.profile-container .drop-zone-file{
+  display: none;
+}
+
+.photo-edit-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.edit-photo {
+  width: 25vw;
+  height: 35vh;
+  max-width: 250px;
+  max-height: 250px;
+  border-radius: 1.25vw;
+  object-fit: cover;
+  background: #f0f0f0;
+}
+
+.edit-photo-icon {
+  position: absolute;
+  bottom: 1.4vh;
+  right: 0.8vw;
+  background: transparent;
+  color: #fff;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border: 2px solid #fff;
+  transition: background 0.2s;
+}
+
+.edit-photo-icon:hover {
+  background: #5548c8;
+}
