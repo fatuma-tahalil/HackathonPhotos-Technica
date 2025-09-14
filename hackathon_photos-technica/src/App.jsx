@@ -1,4 +1,4 @@
-/* TODO: Finish laptop CSS, Finish mobile CSS, Make Project public, post on LinkedIn
+/* TODO: Finish laptop CSS, Finish mobile CSS
 */
 
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
