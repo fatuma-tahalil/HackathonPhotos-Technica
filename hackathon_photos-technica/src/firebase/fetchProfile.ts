@@ -7,7 +7,7 @@ export async function fetchProfileName (){
         const userDocRef = doc(db, "users", user.uid);
         const userDoc = await getDoc(userDocRef);
         const userData = userDoc.data()
-        // Returns the users name and profile picture
+        
         return (userData.name);
     } catch (error) {
         console.error(error);
@@ -20,7 +20,7 @@ export async function fetchProfilePhoto (){
         const userDocRef = doc(db, "users", user.uid);
         const userDoc = await getDoc(userDocRef);
         const userData = userDoc.data()
-        // Returns the users name and profile picture
+
         return (userData.profileURL);
     } catch (error) {
         console.error(error);
