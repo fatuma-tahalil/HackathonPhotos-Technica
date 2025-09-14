@@ -58,6 +58,10 @@
   padding-right: 2vw;
 }
 
+.navbar .logout-icon{
+  margin-left: 0.5vw;
+}
+
 /*2. Buttons*/
 .button {
   font-size: 2vw;

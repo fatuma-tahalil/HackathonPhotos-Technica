@@ -1,5 +1,4 @@
-/* TODO: Finish laptop CSS, Finish mobile CSS
-*/
+// TODO: Finish laptop CSS, Finish mobile CSS 
 
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { useState, useEffect } from 'react';
