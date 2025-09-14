@@ -6,7 +6,6 @@ const Navbar = () => {
     const handleGoogleSignOut = async () => {
     try {
         await signOutWithGoogle();
-        console.log("Logout successfull");
     } catch (error) {
         console.error("Logout failed");
         console.error(error);

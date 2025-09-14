@@ -58,7 +58,6 @@ async function uploadImageToDatabase(imageObject: object, folder: string, storag
             title: imageObject.title,
             userID: user.uid
         };
-        console.log("photo data:", photoData);
         // The document id will be the photo id
         const photoRef = doc(db, folder, photoData.id);
         await setDoc(photoRef, photoData);

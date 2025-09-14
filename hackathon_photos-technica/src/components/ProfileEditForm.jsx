@@ -28,7 +28,6 @@ const ProfileEditForm = ({ onSave }) => {
         setSelectedImage(null);
         onSave();
     }
-    //const fileInputRef = useRef(null);*/
 
     useEffect(() => {
         const fetchProfile = async() => {

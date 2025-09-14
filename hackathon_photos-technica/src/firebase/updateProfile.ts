@@ -27,7 +27,6 @@ export async function updateProfile (name: string, profilePicture: File) {
     try {
         const profileRef = doc(db, "users", `${user.uid}`);
         await updateDoc(profileRef, updatedUserData);
-        console.log("Updated profile picture");
     } catch (error) {
         console.error(error);
     }
@@ -39,7 +38,6 @@ export async function updateProfile (name: string, profilePicture: File) {
 async function uploadProfileToStorage(profilePicture: File){
     try{
         const imageRef = ref(storage, `photos/profile-picture/${profilePicture.name}`);
-        console.log("Uploaded photo");
         await uploadBytes(imageRef, profilePicture);
         const imageStorageURL = await getDownloadURL(imageRef);
         return imageStorageURL;
