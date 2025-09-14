@@ -12,13 +12,13 @@
 } 
 
 .padding-medium {
-  height:20px;
+  height: 3vh;
   width:100%;
 }
 /* Pages */
 .page {
-  min-width: 400px;
-  min-height: 400px;  
+  min-width: 25vw;
+  min-height: 25vh;
   display: flex;
   flex-direction:column;
   align-items: center;
@@ -31,13 +31,12 @@
 #root .navbar{
   position:relative;
   width:100vw;
-  padding-top: 20px;
-  padding-bottom:15px;
+  padding-top: 2vh;
+  padding-bottom: 1.5vh;
   display: flex;
   flex-flow: row;
   justify-content: space-between;
   background-color: rgba(177, 198, 234, 1);
-  border-radius: 5px;
 }
 .navbar .navbar-group{
   display:flex;
@@ -46,8 +45,8 @@
 }
 .navbar a {
   display: flex;  
-  padding-left: 20px;
-  font-size: 20px;
+  padding-left: 2vw;
+  font-size: clamp(1.2rem, 2vw, 25px); /* Max font size is 25px */
   font-weight: 500;
   color: white;
   text-decoration: none;
@@ -61,10 +60,10 @@
 
 /*2. Buttons*/
 .button {
-  font-size: 25px;
+  font-size: 2vw;
   font-weight: 400;
   font-family: 'Lilita One', sans-serif;
-  border-radius: 10px;
+  border-radius: 1vw;
   background-color: rgba(177, 198, 234, 1);
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -80,7 +79,7 @@
   font-size: 40px;
   font-optical-sizing: auto;
   align-self:flex-start;
-  padding: 30px 2px 30px 5%;
+  padding:  4vh 0.2vw 4vh 5vw; 
 }
 
 .hashtag:hover{
