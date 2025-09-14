@@ -71,6 +71,10 @@
   transition: border-color 0.25s; 
 }
 
+.button:hover{
+  background-color: rgb(166, 193, 240);
+}
+
 /* 3. Hashtags */
 .hashtag {
   color: black;
