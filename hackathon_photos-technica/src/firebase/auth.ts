@@ -16,7 +16,6 @@ export const signInWithGoogle = async () => {
         if (!userExist){
             await addUserToDatabase(user);
         }
-        console.log("User already in database");
         return user;
     } catch (error) {
         const errorCode = error.code;
@@ -30,7 +29,6 @@ export const signInWithGoogle = async () => {
 export const signOutWithGoogle = async () => {
     try {
         await signOut(auth);
-        console.log("Signed out");
     } catch (error) {
         console.error("Sign out failed:", error);
         throw error;
@@ -61,7 +59,7 @@ async function addUserToDatabase(user) {
             id: user.uid,
             email: user.email,
             name: user.displayName,
-            profileURL: user.photoURL || '',
+            profileURL: user.photoURL,
             createdAt: Timestamp.now()
         }
 

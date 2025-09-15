@@ -1,5 +1,3 @@
-/* TODO: Max width and number of photos scale to viewport size*/
-
 /* Components */
 /* 1. Photo Slides */
 .workshop-photo-slides, .group-photo-slides, .hardware-photo-slides {
@@ -11,10 +9,12 @@
 .workshop-photo-slides .photo,
 .group-photo-slides .photo, 
 .hardware-photo-slides .photo {
-  width:180px;
-  height:180px;
+  width:18vw;
+  height:18vw;
+  max-width: 180px;
+  max-height: 180px;
   background-color: rgb(223, 220, 220);
-  border-radius: 20px;
+  border-radius: 1.25vw;
 }
 /* The square behind the photos allows photos to be clicable*/
 .photo-button {
@@ -39,15 +39,10 @@
 
 /* Photo Gallery Page */
 .gallery{
-  max-width:800px;
+  max-width: 800px;
   min-width: 650px;
-  margin: 0 auto;
 }
 .gallery a {
-  color: white;
-  font-family: "Inter", sans-serif;
-  font-weight:20;
-  font-size: 40px;
   font-optical-sizing: auto;
   align-self:flex-start;
   padding: 30px 2px 30px 5%;
@@ -59,15 +54,21 @@
 /* Photo Album: Shows the full album of a specific hashtag*/
 .photo-album{
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  column-gap: 60px;
-  row-gap: 30px;
-  width:90vw;
+  grid-template-columns: repeat(auto-fill, minmax(15vw, 1fr));
+  gap: 0.5vw;
+  width: 90vw;
+  margin: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 .photo-album .photo {
-  height: 240px;
-  width: 220px;
+  aspect-ratio: 1/1;
+  width: 100%;
   background-color: rgb(223, 220, 220);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .photo-album .photo .photo-image{
   width: 100%;
@@ -77,11 +78,29 @@
   object-position: center;
 }
 #album-title {
-  font-size: 45px;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 100;
+  width:100%;
+}
+/* Remove gaps and border radius on small screens */
+@media (max-width: 600px) {
+  .photo-album {
+    gap: 0;
+    width: 100vw;
+    padding: 0;
+  }
+  .photo-album .photo {
+    border-radius: 0;
+  }
+  .photo-album .photo .photo-image {
+    border-radius: 0;
+  }
 }
 
 /* Photo Modal */
 .photo-modal-container {
+  max-height: 50vw;
+  max-height: 85vh;
   border: solid black;
   width: 600px;
   background-color: rgba(169, 169, 169, 0.451);
@@ -89,37 +108,48 @@
   flex-flow: column nowrap;
   align-items: center;
   padding: 2%;
-  border-radius: 20px;
+  border-radius: 2vw;
   position: absolute;
   top: 50%;
   left:50%;
   transform: translate(-50%, -50%);
+  overflow:auto;
+  scrollbar-width:none;
+  -ms-overflow-style:none;
 }
 .photo-modal-container .title {
-  font-size: 25px;
-  width: 400px;
+  font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+  width: 80vw;
+  max-width: 400px;
 }
 .photo-modal-container .image-container {
-  width: 400px;
-  height:400px;
-  margin: 20px auto;
+  width: 80vw;
+  max-width: 400px;
+  height: 80vw;
+  max-height: 400px;
+  margin: 2vh auto;
 }
 .photo-modal-container .image-container img {
-  width:100%;
-  height:100%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center;
   background-repeat: no-repeat;
 }
 .photo-modal-container .photo-information {
-  width: 400px;
+  width: 80vw;
+  max-width: 400px;
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
   align-items: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .photo-modal-container .description {
-  width: 380px;
+  width: 76vw;
+  max-width: 380px;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+

@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
 import { signOutWithGoogle } from '../firebase/auth.ts';
+import logoutIcon from '../assets/logoutIcon.svg';
 import "../css/App.css";
 
 const Navbar = () => {
     const handleGoogleSignOut = async () => {
     try {
         await signOutWithGoogle();
-        console.log("Logout successfull");
     } catch (error) {
         console.error("Logout failed");
         console.error(error);
@@ -19,7 +19,10 @@ const Navbar = () => {
                 <Link to="/photogallery"> Gallery </Link>
                 <Link to="/uploadpost"> Create Post </Link>
             </div>
-            <Link onClick={handleGoogleSignOut} className="logout" to="/login"> Logout </Link>
+            <Link onClick={handleGoogleSignOut} className="logout" to="/login"> 
+                Logout
+                <img className="logout-icon" src={logoutIcon} alt="logout icon"/>
+            </Link>
         </nav>
     )
 }

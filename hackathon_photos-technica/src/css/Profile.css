@@ -1,27 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lilita+One&display=swap');
 
-/* Profile Page */
+/* Profile View Page */
 .profile-container {
   width: 90vw;
   flex-flow: column;
   justify-content: center;
-  height: 600px;
+  height: 70vh;
+  box-sizing: border-box;
 }
 .profile-container .name {
   margin:0;
-  font-size: 35px;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+  color: black;
 }
-.profile-container img{
-  height:180px;
+.profile-container .photo {
+  width:20vw;
+  height:30vh;
+  max-width: 200px;
+  max-height: 200px;
+  background-color: transparent;
+  border-radius: 1.25vw;
+}
+.profile-container .photo img{
+  width: 100%;
+  height: 100%;
+  border-radius: 1.25vw;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  object-position: center;
+  
 }
 .profile-container button{
-  height:90px;
+  height: 10vh;
   display: flex;
   align-items: center;
-  border-radius: 15px;
-  box-shadow: 50px;
-  transition-duration: 10s;
+  border-radius: 1vw;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.08);
+  transition-duration: 0.3s;
 }
 
 .profile-container h1 {
-  font-size: 30px;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+}
+
+
+/* Profile Edit Page*/
+.profile-container .edit-profile-name {
+  margin: 0;
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  font-weight: 400;
+  font-family: 'Inter', sans-serif;
+  color: black;
+  background: transparent;
+  width: 60vw;
+  max-width: 15rem;
+  height: 2.5rem;
+  border: 1px solid black;
+  border-radius: 0.2vw;
+  padding-left: 0.2vw;
+}
+
+.profile-container .drop-zone-file{
+  display: none;
+}
+
+.photo-edit-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.edit-photo {
+  width: 25vw;
+  height: 35vh;
+  max-width: 250px;
+  max-height: 250px;
+  border-radius: 1.25vw;
+  object-fit: cover;
+  background: #f0f0f0;
+}
+
+.edit-photo-icon {
+  position: absolute;
+  bottom: 1.4vh;
+  right: 0.8vw;
+  background: transparent;
+  color: #fff;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border: 2px solid #fff;
+  transition: background 0.2s;
+}
+
+.edit-photo-icon:hover {
+  background: #5548c8;
 }

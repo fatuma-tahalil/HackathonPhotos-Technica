@@ -8,7 +8,7 @@ export interface User {
     email: string;
     id: string; // Google authentication id
     name: string;
-    profileURL?: string;
+    profileURL: string;
 };
 
 export interface Photo {
