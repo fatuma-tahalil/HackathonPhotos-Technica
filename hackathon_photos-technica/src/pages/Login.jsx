@@ -16,7 +16,7 @@ const Login = () => {
 
   return (
         <div className="page">
-            <div className="container">
+            <div className="login-container">
                 <div className="logo-square">
                     <img className="logo-img" src={technicaLoginPhoto} alt="Technica Logo"></img>
                 </div>

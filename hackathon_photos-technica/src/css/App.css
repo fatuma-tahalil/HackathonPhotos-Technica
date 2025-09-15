@@ -64,7 +64,7 @@
 
 /*2. Buttons*/
 .button {
-  font-size: 2vw;
+  font-size: 2rem;
   font-weight: 400;
   font-family: 'Lilita One', sans-serif;
   border-radius: 1vw;
@@ -74,7 +74,6 @@
   cursor: pointer;
   transition: border-color 0.25s; 
 }
-
 .button:hover{
   background-color: rgb(166, 193, 240);
 }

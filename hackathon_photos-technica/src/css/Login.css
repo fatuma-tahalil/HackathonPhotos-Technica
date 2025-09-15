@@ -3,7 +3,7 @@
   padding:0px;
 }
 
-.container {
+.login-container {
   width:100vw;
   height:100vh;
   display:flex;
@@ -16,7 +16,7 @@
   object-position: center;
 }
 
-.container #loginButton {
+.login-container #loginButton {
   margin-top: 50px;
   height: 70px;
   width: 200px;
@@ -30,7 +30,7 @@
   transition: border-color 0.25s;
 }
 
-.container .logo-square {
+.login-container .logo-square {
   position:static;
   height: 300px;
   width: 350px;
@@ -40,7 +40,7 @@
   border-radius: 10px;
 }
 
-.container .logo-square .logo-img {
+.login-container .logo-square .logo-img {
   max-height:500px;
   max-width: 500px;
   z-index: 2;

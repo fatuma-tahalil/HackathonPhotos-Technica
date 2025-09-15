@@ -1,50 +1,96 @@
-.container {
-    font-family:'Courier New', Courier, monospace;
-    text-align: center;
-    display: flex;
-    justify-self: center;
-    flex-direction: column;
-    padding-bottom: 6vh;
-    height: 80vh;
-    width: 90vw;
-    max-width: 600px;
-    border-radius: 3vw;
-    align-items:center;
-    justify-content:center;
-}
-.container #descBox {
-  width: 70vw;            
-  max-width: 450px;
-  height: 28vh;            
-  max-height: 200px;
+.upload-container {
+  font-family:'Courier New', Courier, monospace;
   display: flex;
-  justify-items: start;
+  text-align: center;
+  flex-flow: column nowrap;
+  width: 50vw;
+  max-width: 500px;
+  min-width: 200px;
+  position: absolute;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  overflow:hidden;
 }
-.container #uploadBtn {
-  transform: translateY(25vh);
-  height: 6vh;                 
-  width: 50vw;                 
-  max-width: 300px;
+.upload-container form {
+  display: flex;
+  flex-direction: column;    /* Stack form elements vertically */
+  width: 100%;
+  gap: 0.1em;                /* Add vertical spacing between elements */
 }
-.container #titleInput {
-  transform: translateY(-6vh); 
-  height: 5vh;                 
-  width: 50vw;                 
-  max-width: 300px;
-}
-.container #titleLabel {
-  transform: translateY(-14vh); 
+.upload-container .title-input {
+  border-radius: 5px;
+  border: none !important; /* Remove border always */
+  height: 5vh;                
+  width: 100%;              
+  background-color: rgba(8, 7, 7, 0.15);
+  padding: 0.5rem;
   color: black;
+  font-family: Inter, sans-serif;
+  box-sizing: border-box;
+}
+.upload-container #descBox { 
+  border-radius: 5px;
+  height: 20vh; 
+  width: 100%;           
+  background-color: rgba(8, 7, 7, 0.15);
+  justify-items: start;
+  border: none !important; /* Remove border always */
+  padding: 0.5rem;
+  box-sizing: border-box;
+  color: black;
+  font-family: Inter, sans-serif;
+  text-align: center; /* Center placeholder */
+  vertical-align: middle;
+  scrollbar-width: none;
+  overflow-x: hidden;      /* Prevent horizontal scroll */
+  resize: vertical;        /* Only allow vertical resizing */
+  word-break: break-word;  /* Ensure long words wrap */
+  white-space: pre-wrap;  
+}
+.upload-container .title-input:focus,
+.upload-container #descBox:focus {
+  border: none !important;      /* Ensure no border on focus */
+  outline: none !important;     /* Ensure no outline on focus */
+  background-color: rgba(37, 34, 34, 0.212);
+}
+.upload-container #descBox:not(:placeholder-shown) {
+  text-align: left;
+  vertical-align: top;
+}
+.upload-container .tag-box {
+  margin-bottom: 1.5em;
 }
 
-.container #resetBtn {
-   transform: translateY(180px);
-   height: 45px;
-   width:300px;
+.upload-container .drop-zone-file{
+  display: none;
 }
-
-
-.container #drop-zone-file{
-  display: flex;
-  justify-self: right;
+.upload-container .upload-file-box {
+  width: 53%;
+  height: 2vh;
+  margin-top: 4.5vh;
+  margin-bottom: 3vh;
+  justify-self: center;
+  background-color: rgba(8, 7, 7, 0.15);
+  font-family: Inter, sans-serif;
+  font-size: 0.9rem;
+  color: black;
+  border-radius: 5px;
+  display:flex;
+  justify-content: center;
+  padding: 1em;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+.upload-container #uploadBtn {
+  padding: 10px;
+  height: 4.5rem;                 
+  width: 50vw;                 
+  max-width: 300px;
+  align-self: center;
+  border-radius: 6px;
+}
+.upload-container #resetBtn {
+  height: 45px;
+  width:300px;
 }
